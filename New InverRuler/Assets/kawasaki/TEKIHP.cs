@@ -16,7 +16,7 @@ public class TEKIHP : MonoBehaviour
     public GameObject coinPrefab; // コインのプレハブ
     public int coinCount = 10; // 生成するコインの数
     public int coinsToAdd = 10; // 追加するコインの数
-    public AudioSource deathSound;
+    public AudioSource damageAudioSource; // ダメージ効果音用
     public float currentHealth;
 
     void Start()
@@ -34,6 +34,11 @@ public class TEKIHP : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        // ダメージ効果音を再生
+        if (damageAudioSource != null)
+        {
+            damageAudioSource.Play();
+        }
         if (currentHealth <= 0)
         {
             StartCoroutine(Die());
@@ -46,15 +51,18 @@ public class TEKIHP : MonoBehaviour
     {
         yield return StartCoroutine(HandleExplosion()); // コルーチンを開始
         Debug.Log("Boss died");
-        Destroy(gameObject); // 敵を消す
-       
-       
 
-        // 死亡時の効果音を再生
-        if (deathSound != null)
+        // シーン内のすべての "EnemyBullet" タグが付いたオブジェクトを消滅させる
+        GameObject[] enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
+        foreach (GameObject bullet in enemyBullets)
         {
-            deathSound.Play();
+            Destroy(bullet);
         }
+
+        Destroy(gameObject); // 敵を消す
+
+        
+
 
         // ボタンとテキストを表示する
         retryButton.SetActive(true);

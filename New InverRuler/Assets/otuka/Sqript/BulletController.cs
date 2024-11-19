@@ -10,6 +10,7 @@ public class BulletController : MonoBehaviour
     public int bulletDamage = 5;
     public int maxBullets = 10;
     private int currentBullets;
+    public AudioSource shootAudioSource; // 発射効果音用
 
     void Start()
     {
@@ -21,6 +22,11 @@ public class BulletController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1) && currentBullets > 0) // 右クリック
         {
+            // 発射効果音を再生
+            if (shootAudioSource != null)
+            {
+                shootAudioSource.Play();
+            }
             Shoot();
         }
     }
