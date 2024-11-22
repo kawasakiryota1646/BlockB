@@ -5,7 +5,7 @@ using UnityEngine;
 public class FriendController : MonoBehaviour
 {
     public GameObject[] deathEffects; // 死亡時のエフェクト（3段階）
-
+    public AudioSource explosionAudioSource; // 爆発効果音用
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +22,11 @@ public class FriendController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet"))
         {
+            AudioSource audioSource = GetComponent<AudioSource>();
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
             StartCoroutine(HandleExplosion()); // コルーチンを開始
             Destroy(gameObject); // 味方機体を消滅させる
         }

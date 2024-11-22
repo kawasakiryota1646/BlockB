@@ -15,11 +15,7 @@ public class SceneController : MonoBehaviour
     {
         
         playerController.ResetPlayerHealth();
-        GameObject[] friends = GameObject.FindGameObjectsWithTag("friend");
-        foreach (GameObject friend in friends)
-        {
-            friend.transform.position = Vector3.zero; // 初期位置にリセット
-        }
+        
 
         // 他のリセット処理もここに追加
     }

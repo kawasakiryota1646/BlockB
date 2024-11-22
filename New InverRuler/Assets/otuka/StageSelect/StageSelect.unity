@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2ada2db6597434598d366a2f267843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Stage normal
+  sceneName: formation normal
 --- !u!1 &1283828389 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7542442347551316703, guid: 45ac6e04b48d7fd4f8bd85a77ea33d10, type: 3}

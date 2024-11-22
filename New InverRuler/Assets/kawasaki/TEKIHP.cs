@@ -17,6 +17,7 @@ public class TEKIHP : MonoBehaviour
     public int coinCount = 10; // 生成するコインの数
     public int coinsToAdd = 10; // 追加するコインの数
     public AudioSource damageAudioSource; // ダメージ効果音用
+    public AudioSource explosionAudioSource; // 爆発効果音用
     public float currentHealth;
 
     void Start()
@@ -51,6 +52,12 @@ public class TEKIHP : MonoBehaviour
     {
         yield return StartCoroutine(HandleExplosion()); // コルーチンを開始
         Debug.Log("Boss died");
+
+        AudioSource audioSource = GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
 
         // シーン内のすべての "EnemyBullet" タグが付いたオブジェクトを消滅させる
         GameObject[] enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
