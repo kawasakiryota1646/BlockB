@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,15 +14,19 @@ public class BulletController : MonoBehaviour
     private int currentBullets;
     public AudioSource shootAudioSource; // 発射効果音用
 
+    private PlayerController playerController; // PlayerControllerの参照
+
     void Start()
     {
         currentBullets = maxBullets;
         UpdateAmmoText();
+        playerController = FindObjectOfType<PlayerController>(); // PlayerControllerを見つける
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && currentBullets > 0) // 右クリック
+        // ゲームの状態を確認してから弾を発射
+        if (playerController != null && PlayerController.gameState == "playing" && Input.GetMouseButtonDown(1) && currentBullets > 0) // 右クリック
         {
             // 発射効果音を再生
             if (shootAudioSource != null)

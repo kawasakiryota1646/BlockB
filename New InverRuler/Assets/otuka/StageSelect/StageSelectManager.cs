@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class StageSelectManager : MonoBehaviour
 {
+    public AudioSource click;
     public Button stage1Button;
     public Button stage2Button;
     public Button stage3Button;
@@ -27,6 +28,11 @@ public class StageSelectManager : MonoBehaviour
 
     public void OnStage1ButtonClick()
     {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
         stage1Options.SetActive(true); // Stage1のオプションを表示
         stage2Options.SetActive(false); // Stage2のオプションを非表示
         stage3Options.SetActive(false); // Stage3のオプションを非表示
@@ -37,6 +43,11 @@ public class StageSelectManager : MonoBehaviour
 
     public void OnStage2ButtonClick()
     {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
         stage1Options.SetActive(false); // Stage1のオプションを非表示
         stage2Options.SetActive(true); // Stage2のオプションを表示
         stage3Options.SetActive(false); // Stage3のオプションを非表示
@@ -47,6 +58,11 @@ public class StageSelectManager : MonoBehaviour
 
     public void OnStage3ButtonClick()
     {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
         stage1Options.SetActive(false); // Stage1のオプションを非表示
         stage2Options.SetActive(false); // Stage2のオプションを非表示
         stage3Options.SetActive(true); // Stage3のオプションを表示

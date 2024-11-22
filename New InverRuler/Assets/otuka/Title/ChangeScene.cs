@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement; //シーンの切り替えに必要
 public class ChangeScene : MonoBehaviour
 {
     public string sceneName; //読み込むシーン名
-
+    public AudioSource click;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +22,11 @@ public class ChangeScene : MonoBehaviour
     //シーンを読み込む
     public void Load()
     {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
         SceneManager.LoadScene(sceneName);
     }
 

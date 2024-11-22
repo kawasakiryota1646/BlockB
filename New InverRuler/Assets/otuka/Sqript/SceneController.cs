@@ -5,8 +5,14 @@ public class SceneController : MonoBehaviour
 {
     public string sceneName; //ì«Ç›çûÇﬁÉVÅ[Éìñº
     public PlayerController playerController;
+    public AudioSource click;
     public void Load()
     {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
         ResetCurrentScene();
         SceneManager.LoadScene(sceneName);
     }

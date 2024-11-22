@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
+    public AudioSource click;
     public Button buttonToShow1; // 表示する最初のボタン
     public Button buttonToShow2; // 表示する2つ目のボタン
     public Button triggerButton; // 表示をトリガーするボタン
@@ -18,6 +19,11 @@ public class ButtonManager : MonoBehaviour
 
     public void OnTriggerButtonClick()
     {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
         buttonsVisible = !buttonsVisible; // フラグを反転させる
 
         buttonToShow1.gameObject.SetActive(buttonsVisible); // ボタンの表示状態を切り替える

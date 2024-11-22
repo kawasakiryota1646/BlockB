@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public BGMController bgmController; // BGMコントローラー
     public AudioSource damageAudioSource; // ダメージ効果音用
     public AudioSource explosionAudioSource; // 爆発効果音用
+
     // Start is called before the first frame update
     void Start()
     {
@@ -136,9 +137,11 @@ public class PlayerController : MonoBehaviour
     {
         gameStartText.SetActive(true); // テキストを表示
         Time.timeScale = 0f; // ゲームを停止
+        PlayerController.gameState = "paused"; // ゲームを停止状態に設定
         yield return new WaitForSecondsRealtime(3f); // 3秒待つ
         gameStartText.SetActive(false); // テキストを非表示
         Time.timeScale = 1f; // ゲームを再開
+        PlayerController.gameState = "playing"; // ゲームをプレイ状態に設定
     }
 }
 
