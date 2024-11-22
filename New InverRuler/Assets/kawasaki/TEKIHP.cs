@@ -19,6 +19,11 @@ public class TEKIHP : MonoBehaviour
     public AudioSource damageAudioSource; // ダメージ効果音用
     public AudioSource explosionAudioSource; // 爆発効果音用
     public float currentHealth;
+    public SpriteRenderer spriteRenderer2;
+    public Sprite phase1Sprite;
+    public Sprite phase2Sprite;
+    public Sprite phase3Sprite;
+    public Sprite phase4Sprite;
 
     void Start()
     {
@@ -32,8 +37,27 @@ public class TEKIHP : MonoBehaviour
         gameClearText.SetActive(false);
     }
 
+    void UpdateBossAppearance()
+    {
+        if (currentHealth <= 75)
+        {
+            spriteRenderer.sprite = phase2Sprite; // フェーズ2に変更
+        }
+        if (currentHealth <= 50)
+        {
+            spriteRenderer.sprite = phase3Sprite; // フェーズ3に変更
+        }
+        if (currentHealth <= 25)
+        {
+            spriteRenderer.sprite = phase4Sprite; // フェーズ4に変更
+        }
+    }
+
+
     public void TakeDamage(float damage)
     {
+        UpdateBossAppearance();
+
         currentHealth -= damage;
         // ダメージ効果音を再生
         if (damageAudioSource != null)
