@@ -16,5 +16,4 @@ public class AutoMove : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x + moveSpeed * Time.deltaTime * direction, transform.position.y, transform.position.z);
     }
-
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CoinManager : MonoBehaviour
 {
     public static CoinManager instance;
-    public int coinCount;
+    public int coinCount = 0; // ‰Šú’l‚ğ0‚Éİ’è
 
     private void Awake()
     {

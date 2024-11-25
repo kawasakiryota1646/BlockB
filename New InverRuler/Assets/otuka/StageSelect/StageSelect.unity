@@ -962,6 +962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1488532426}
   - component: {fileID: 1488532425}
+  - component: {fileID: 1488532427}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -981,7 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0fc9e75f416b2b48bcddf7d2f2310f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCount: 10
+  coinCount: 0
 --- !u!4 &1488532426
 Transform:
   m_ObjectHideFlags: 0
@@ -997,6 +998,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1488532427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488532424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d4d2a904c2f7145bb73472f1efd456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &1810954595
 AudioSource:
   m_ObjectHideFlags: 0

@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0fc9e75f416b2b48bcddf7d2f2310f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCount: 10
+  coinCount: 0
 --- !u!4 &540588518
 Transform:
   m_ObjectHideFlags: 0
@@ -576,5 +576,13 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 615991125}
+    - target: {fileID: 1498367649481503732, guid: cda66fed0f7e2874fb2ec43d7a76cd08, type: 3}
+      propertyPath: tooltipText1
+      value: "\u5473\u65B9\u6A5F\u4F53\u30921\u6A5F\u304B\u30892\u6A5F\u306B\u5897\u3084\u3059"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498367649481503732, guid: cda66fed0f7e2874fb2ec43d7a76cd08, type: 3}
+      propertyPath: tooltipText2
+      value: "\u5FC5\u8981\u306A\u30B3\u30A4\u30F3\u306E\u679A\u6570\u306F40\u679A"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cda66fed0f7e2874fb2ec43d7a76cd08, type: 3}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttckBullet : MonoBehaviour
 {
-    public float damage = 10f;  // ’e‚ÌUŒ‚—Í
+    public static float damage = 5f;  // ’e‚ÌUŒ‚—Í
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,5 +16,4 @@ public class AttckBullet : MonoBehaviour
             Destroy(gameObject); // ’e‚ğÁ‚·
         }
     }
-
 }
