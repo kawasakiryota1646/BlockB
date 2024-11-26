@@ -484,6 +484,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1498367648370823448, guid: cda66fed0f7e2874fb2ec43d7a76cd08, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 280.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498367648370823448, guid: cda66fed0f7e2874fb2ec43d7a76cd08, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 156.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498367648370823448, guid: cda66fed0f7e2874fb2ec43d7a76cd08, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498367648370823448, guid: cda66fed0f7e2874fb2ec43d7a76cd08, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00099182
+      objectReference: {fileID: 0}
     - target: {fileID: 1498367649234258730, guid: cda66fed0f7e2874fb2ec43d7a76cd08, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -583,6 +599,18 @@ PrefabInstance:
     - target: {fileID: 1498367649481503732, guid: cda66fed0f7e2874fb2ec43d7a76cd08, type: 3}
       propertyPath: tooltipText2
       value: "\u5FC5\u8981\u306A\u30B3\u30A4\u30F3\u306E\u679A\u6570\u306F40\u679A"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942839541440239560, guid: cda66fed0f7e2874fb2ec43d7a76cd08, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217228191532366323, guid: cda66fed0f7e2874fb2ec43d7a76cd08, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 94.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217228191532366323, guid: cda66fed0f7e2874fb2ec43d7a76cd08, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 8.8216
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cda66fed0f7e2874fb2ec43d7a76cd08, type: 3}

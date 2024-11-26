@@ -2184,6 +2184,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2057044718216900976, guid: 80f04b7abddeef74dace4d70bfe12f00, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057044718216900976, guid: 80f04b7abddeef74dace4d70bfe12f00, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057044718216900976, guid: 80f04b7abddeef74dace4d70bfe12f00, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 900
+      objectReference: {fileID: 0}
     - target: {fileID: 4327758250218655135, guid: 80f04b7abddeef74dace4d70bfe12f00, type: 3}
       propertyPath: m_Camera
       value: 
@@ -2574,6 +2586,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7023106448697899990, guid: 1c9b6e3f4fb47d7449de09aff7cf8b33, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 7023106448697899990, guid: 1c9b6e3f4fb47d7449de09aff7cf8b33, type: 3}
       propertyPath: m_Name
       value: right

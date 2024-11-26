@@ -502,5 +502,17 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1005972653}
+    - target: {fileID: 3940260595499362504, guid: 4bb3e2d13ae851f41810dd293acc8da7, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3940260595499362504, guid: 4bb3e2d13ae851f41810dd293acc8da7, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 3940260595499362504, guid: 4bb3e2d13ae851f41810dd293acc8da7, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 900
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bb3e2d13ae851f41810dd293acc8da7, type: 3}
