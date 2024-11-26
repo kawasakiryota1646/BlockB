@@ -13,8 +13,6 @@ public class TEKIAttack : MonoBehaviour
     public float attackCooldown = 1.0f;
     private float lastAttackTime;
     private TEKIHP bossHealth;      //ƒ{ƒX‚Ì‘Ì—Í
-    private float spiralAngle = 0f;
-
     public float randomSpeed = 5f;  // ’e‚Ì‘¬“x
     public int   randomCount = 10;    // ”­Ë‚·‚é’e‚Ì”
 
