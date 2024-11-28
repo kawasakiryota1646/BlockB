@@ -32,8 +32,7 @@ Transform:
   m_LocalPosition: {x: -0.16, y: 2.72, z: 0}
   m_LocalScale: {x: 4.4545, y: 3.5446, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4453932320518785532}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -255,56 +254,11 @@ MonoBehaviour:
   coinPrefab: {fileID: 2366648631505798212, guid: 75f6d05c42fa51e409fe6e0ad76fc3a4, type: 3}
   coinCount: 10
   coinsToAdd: 1
-  deathSound: {fileID: 0}
+  damageAudioSource: {fileID: 0}
+  explosionAudioSource: {fileID: 0}
   currentHealth: 0
---- !u!1 &4453932320518785531
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4453932320518785532}
-  - component: {fileID: 4453932320518785533}
-  m_Layer: 0
-  m_Name: BossFirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4453932320518785532
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4453932320518785531}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.051, y: -0.28, z: 175.57655}
-  m_LocalScale: {x: 0.22449207, y: 0.28211927, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4453932320096314966}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4453932320518785533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4453932320518785531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 590b2336683ef434f9eec3ea9b6752c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1447662181806142486, guid: e4f6dd588117c4d44a936abc36ee99aa, type: 3}
-  laserPrefab: {fileID: 0}
-  firePoint: {fileID: 4453932320518785532}
-  bulletSpeed: 4
-  attackCooldown: 1
-  randomSpeed: 3
-  randomCount: 5
+  spriteRenderer2: {fileID: 0}
+  phase1Sprite: {fileID: 0}
+  phase2Sprite: {fileID: 0}
+  phase3Sprite: {fileID: 0}
+  phase4Sprite: {fileID: 0}
