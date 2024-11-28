@@ -533,6 +533,11 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 4453932320096314972, guid: 877c26420e16d3e4c90b8d263b204bda, type: 3}
   m_PrefabInstance: {fileID: 4453932318840191248}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &337164741 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4453932320096314966, guid: 877c26420e16d3e4c90b8d263b204bda, type: 3}
+  m_PrefabInstance: {fileID: 4453932318840191248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &337867311 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5628597861727087577, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
@@ -1678,6 +1683,62 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1737247187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1737247188}
+  - component: {fileID: 1737247189}
+  m_Layer: 0
+  m_Name: JapanFirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1737247188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737247187}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.036, y: -0.115, z: -0.05659338}
+  m_LocalScale: {x: 0.22449207, y: 0.28211927, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 337164741}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1737247189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737247187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590b2336683ef434f9eec3ea9b6752c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SAKURAPrefab: {fileID: 1447662181806142486, guid: e4f6dd588117c4d44a936abc36ee99aa, type: 3}
+  HIMAWARIPrefab: {fileID: 5767640577875138886, guid: 5edbc32fc1edbb3479cb80ce12853c44, type: 3}
+  MOMIZIPrefab: {fileID: 7522598048851565201, guid: ff21706dac0a5e443bf3735611e17787, type: 3}
+  SNOWPrefab: {fileID: 1546470821284441854, guid: cbade562a821516489bb07ac4f6ad605, type: 3}
+  firePoint: {fileID: 1737247188}
+  bulletSpeed: 5
+  attackCooldown: 1
+  randomSpeed: 5
+  randomCount: 5
+  rotationSpeed: 50
+  bulletCount: 10
+  positionOffset: 1
 --- !u!4 &1803740316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8396942342089256594, guid: 7ec25fdb1cb297044bd4bef87978ab94, type: 3}
@@ -2417,7 +2478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4453932320096314970, guid: 877c26420e16d3e4c90b8d263b204bda, type: 3}
       propertyPath: maxHealth
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4453932320096314970, guid: 877c26420e16d3e4c90b8d263b204bda, type: 3}
       propertyPath: coinsToAdd
@@ -2723,6 +2784,10 @@ PrefabInstance:
       propertyPath: ammoPrefab
       value: 
       objectReference: {fileID: 3649114772506764417, guid: c0103f6489a850542b5b6f15a98b9a30, type: 3}
+    - target: {fileID: 2863640313265113640, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
+      propertyPath: spawnInterval
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3512458204582337774, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
       propertyPath: ammoText
       value: 
