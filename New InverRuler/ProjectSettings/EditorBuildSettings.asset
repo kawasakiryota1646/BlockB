@@ -42,7 +42,7 @@ EditorBuildSettings:
     path: Assets/main/Stage3 1/Stage3 normal/formation3 normal.unity
     guid: e7b821881fe73c44db68839389a34e48
   - enabled: 1
-    path: Assets/main/Stage3 1/Stage3 normal.unity
+    path: Assets/main/Stage3 1/Stage3 normal/Stage3 normal.unity
     guid: f76a49cb618c2984abe1655c86db7fcf
   - enabled: 1
     path: Assets/main/Stage3 hard.unity
