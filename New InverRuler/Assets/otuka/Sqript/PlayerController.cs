@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
     {
         if (gameState == "playing")
         {
+            
             hp--; //‚ðŒ¸‚ç‚·
             if (hp > 0)
             {
