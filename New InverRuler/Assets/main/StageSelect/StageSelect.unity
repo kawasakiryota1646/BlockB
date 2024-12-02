@@ -1920,7 +1920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9221609397387324702, guid: 45ac6e04b48d7fd4f8bd85a77ea33d10, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.11124992
+      value: -4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45ac6e04b48d7fd4f8bd85a77ea33d10, type: 3}
@@ -1961,7 +1961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2ada2db6597434598d366a2f267843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: formation3 haed
+  sceneName: formation3 hard
   click: {fileID: 8248509117025334024}
 --- !u!114 &8248509117025334019
 MonoBehaviour:
@@ -1989,7 +1989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2ada2db6597434598d366a2f267843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: formation2 haed
+  sceneName: formation2 hard
   click: {fileID: 1810954595}
 --- !u!114 &8248509117025334021
 MonoBehaviour:

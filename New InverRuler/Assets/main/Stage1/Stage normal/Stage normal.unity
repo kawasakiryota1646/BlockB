@@ -538,6 +538,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4453932320096314966, guid: 877c26420e16d3e4c90b8d263b204bda, type: 3}
   m_PrefabInstance: {fileID: 4453932318840191248}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &337164745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337164719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6cd7df333e37c4eaa8935596ccfbcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  flashDuration: 0.1
+  deathEffects:
+  - {fileID: 205398590896992992, guid: 851a771a406db274e9d5a38a2ebe072c, type: 3}
+  retryButton: {fileID: 1734716916}
+  nextButton: {fileID: 291434790}
+  gameClearText: {fileID: 1001717928}
+  bgmController: {fileID: 1995705243}
+  coinPrefab: {fileID: 2366648631505798212, guid: 75f6d05c42fa51e409fe6e0ad76fc3a4, type: 3}
+  coinCount: 10
+  coinsToAdd: 10
+  damageAudioSource: {fileID: 337164726}
+  explosionAudioSource: {fileID: 337164732}
+  currentHealth: 0
+  spriteRenderer2: {fileID: 337164737}
+  phase1Sprite: {fileID: 21300000, guid: 44a811bfd52aa934c8a326556077fdc0, type: 3}
+  phase2Sprite: {fileID: 21300000, guid: b55d718d27edddc4ca27bdbeefbb8bcc, type: 3}
+  phase3Sprite: {fileID: 21300000, guid: 519283695836452419f8950f7d5c138c, type: 3}
+  phase4Sprite: {fileID: 21300000, guid: a67ed06f8270f254796237e3c79bf720, type: 3}
 --- !u!1 &337867311 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5628597861727087577, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
@@ -2767,6 +2798,7 @@ PrefabInstance:
       objectReference: {fileID: 5767640577875138886, guid: 5edbc32fc1edbb3479cb80ce12853c44, type: 3}
     m_RemovedComponents:
     - {fileID: 4453932320096314969, guid: 877c26420e16d3e4c90b8d263b204bda, type: 3}
+    - {fileID: 4453932320096314970, guid: 877c26420e16d3e4c90b8d263b204bda, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 877c26420e16d3e4c90b8d263b204bda, type: 3}
 --- !u!1001 &5251873288496752993
 PrefabInstance:

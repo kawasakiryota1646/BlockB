@@ -226,7 +226,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 76974150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 013f411b28945c24396187edee8b6613, type: 3}
+  m_Script: {fileID: 11500000, guid: ac34028ac9c04b545be5b0453c101e1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UKIPrefab: {fileID: 7813699697627559182, guid: 1c22f497fa456ff449ffe937539d278a, type: 3}
@@ -239,13 +239,13 @@ MonoBehaviour:
   fireInterval: 5
   POTATOSpeed: 3
   shootInterval: 1.5
-  bulletCount: 6
-  burgerSpeed: 3
+  bulletCount: 9
+  burgerSpeed: 5
   angleRange: 180
   spawnInterval: 0.2
-  bulletsPerWave: 4
-  rainbulletSpeed: 5
-  spawnAreaWidth: 8
+  bulletsPerWave: 6
+  rainbulletSpeed: 3
+  spawnAreaWidth: 10
 --- !u!1 &125976368 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1062416946711313537, guid: 80f04b7abddeef74dace4d70bfe12f00, type: 3}
@@ -1310,7 +1310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6756136394644768461, guid: e282c96546aaff246a00dbdcffd024de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.22
+      value: 5.34
       objectReference: {fileID: 0}
     - target: {fileID: 6756136394644768461, guid: e282c96546aaff246a00dbdcffd024de, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1372,7 +1372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2576517156193728557, guid: e1d3655b0e5e5c94b9ffa2d1bb8d181e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2576517156193728557, guid: e1d3655b0e5e5c94b9ffa2d1bb8d181e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1429,7 +1429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6756136394644768461, guid: e282c96546aaff246a00dbdcffd024de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.25
+      value: -5.14
       objectReference: {fileID: 0}
     - target: {fileID: 6756136394644768461, guid: e282c96546aaff246a00dbdcffd024de, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1496,7 +1496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2576517156193728557, guid: e1d3655b0e5e5c94b9ffa2d1bb8d181e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.93
+      value: -4.9
       objectReference: {fileID: 0}
     - target: {fileID: 2576517156193728557, guid: e1d3655b0e5e5c94b9ffa2d1bb8d181e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2315,6 +2315,42 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1651366327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651366324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e488b1918c0b7924d812d8eb0a7d168f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1000
+  flashDuration: 0.1
+  deathEffects:
+  - {fileID: 205398590896992992, guid: 851a771a406db274e9d5a38a2ebe072c, type: 3}
+  retryButton: {fileID: 1412064204}
+  nextButton: {fileID: 709510287}
+  gameClearText: {fileID: 125976368}
+  bgmController: {fileID: 652405875}
+  coinPrefab: {fileID: 2366648631505798212, guid: 75f6d05c42fa51e409fe6e0ad76fc3a4, type: 3}
+  coinCount: 10
+  coinsToAdd: 10
+  damageAudioSource: {fileID: 1651366325}
+  explosionAudioSource: {fileID: 1651366326}
+  currentHealth: 0
+  spriteRenderer2: {fileID: 1651366331}
+  phase1Sprite: {fileID: 21300000, guid: d623e4d96d600174d95383e36f3694e6, type: 3}
+  phase2Sprite: {fileID: 21300000, guid: c70107cfba9c57e4eb584aede81de108, type: 3}
+  phase3Sprite: {fileID: 21300000, guid: 53e8921ceef10e746932a7f9bed4c7bd, type: 3}
+  phase4Sprite: {fileID: 21300000, guid: 1c93d2f56b5455b4b99bb739b7a1502b, type: 3}
+--- !u!212 &1651366331 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2720333944863604915, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
+  m_PrefabInstance: {fileID: 2720333945296325336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1709244755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2549,12 +2585,20 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2720333944863604916, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.953213
+      objectReference: {fileID: 0}
+    - target: {fileID: 2720333944863604916, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.4478903
+      objectReference: {fileID: 0}
+    - target: {fileID: 2720333944863604916, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 2720333944863604916, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.45
+      value: 2.5013
       objectReference: {fileID: 0}
     - target: {fileID: 2720333944863604916, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2590,7 +2634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2720333944863604917, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
       propertyPath: maxHealth
-      value: 500
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2720333944863604917, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
       propertyPath: coinPrefab
@@ -2620,5 +2664,6 @@ PrefabInstance:
       propertyPath: explosionAudioSource
       value: 
       objectReference: {fileID: 1651366326}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2720333944863604917, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}

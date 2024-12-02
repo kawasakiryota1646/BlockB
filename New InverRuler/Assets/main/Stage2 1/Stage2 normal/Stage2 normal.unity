@@ -1310,7 +1310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6756136394644768461, guid: e282c96546aaff246a00dbdcffd024de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.22
+      value: 5.24
       objectReference: {fileID: 0}
     - target: {fileID: 6756136394644768461, guid: e282c96546aaff246a00dbdcffd024de, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1429,7 +1429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6756136394644768461, guid: e282c96546aaff246a00dbdcffd024de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.25
+      value: -5.46
       objectReference: {fileID: 0}
     - target: {fileID: 6756136394644768461, guid: e282c96546aaff246a00dbdcffd024de, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2589,6 +2589,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2720333944863604917, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
+      propertyPath: coinCount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2720333944863604917, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
       propertyPath: maxHealth
       value: 500
       objectReference: {fileID: 0}
@@ -2596,6 +2600,10 @@ PrefabInstance:
       propertyPath: coinPrefab
       value: 
       objectReference: {fileID: 2366648631505798212, guid: 75f6d05c42fa51e409fe6e0ad76fc3a4, type: 3}
+    - target: {fileID: 2720333944863604917, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
+      propertyPath: coinsToAdd
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2720333944863604917, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
       propertyPath: nextButton
       value: 
@@ -2620,5 +2628,13 @@ PrefabInstance:
       propertyPath: explosionAudioSource
       value: 
       objectReference: {fileID: 1651366326}
+    - target: {fileID: 2720333944863604917, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
+      propertyPath: deathEffects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2720333944863604917, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
+      propertyPath: deathEffects.Array.data[0]
+      value: 
+      objectReference: {fileID: 205398590896992992, guid: 851a771a406db274e9d5a38a2ebe072c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}

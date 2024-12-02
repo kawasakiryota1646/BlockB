@@ -36,5 +36,41 @@ public class BulletFriend : MonoBehaviour
             // ’e‚ğ”j‰ó‚·‚é
             Destroy(gameObject);
         }
+
+        JapanHP enemy2 = collision.GetComponent<JapanHP>();
+        if (enemy2 != null)
+        {
+            // “G‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚é
+            enemy2.TakeDamage(damage);
+            // ’e‚ğ”j‰ó‚·‚é
+            Destroy(gameObject);
+        }
+        HardJapanHP enemy3 = collision.GetComponent<HardJapanHP>();
+        if (enemy3 != null)
+        {
+            // “G‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚é
+            enemy3.TakeDamage(damage);
+            // ’e‚ğ”j‰ó‚·‚é
+            Destroy(gameObject);
+        }
+
+        USA_hardHP enemy4 = collision.GetComponent<USA_hardHP>();
+        if (enemy4 != null)
+        {
+            // “G‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚é
+            enemy4.TakeDamage(damage);
+            // ’e‚ğ”j‰ó‚·‚é
+            Destroy(gameObject);
+        }
+
+        ROSIA_hard_HP enemy5 = collision.GetComponent<ROSIA_hard_HP>();
+        if (enemy5 != null)
+        {
+            // “G‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚é
+            enemy5.TakeDamage(damage);
+            // ’e‚ğ”j‰ó‚·‚é
+            Destroy(gameObject);
+        }
     }
 }
+

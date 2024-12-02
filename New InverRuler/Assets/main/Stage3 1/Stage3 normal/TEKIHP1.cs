@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class TEKIHP : MonoBehaviour
+public class TEKIHP1 : MonoBehaviour
 {
     public int maxHealth = 100;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     public float flashDuration = 0.1f;
     public GameObject[] deathEffects; // 死亡時のエフェクト（3段階）
-    public GameObject retryButton; // リトライボタン
-    public GameObject nextButton; // 次へボタン
+
     public GameObject gameClearText; // GAMEクリアのテキスト
     public BGMController bgmController; // BGMコントローラー
     public GameObject coinPrefab; // コインのプレハブ
@@ -32,22 +32,21 @@ public class TEKIHP : MonoBehaviour
         originalColor = spriteRenderer.color;
 
         // ボタンとテキストを非表示にする
-        retryButton.SetActive(false);
-        nextButton.SetActive(false);
+     
         gameClearText.SetActive(false);
     }
 
     void UpdateBossAppearance()
     {
-        if (currentHealth <= 75)
+        if (currentHealth <= 525)
         {
             spriteRenderer.sprite = phase2Sprite; // フェーズ2に変更
         }
-        if (currentHealth <= 50)
+        if (currentHealth <= 350)
         {
             spriteRenderer.sprite = phase3Sprite; // フェーズ3に変更
         }
-        if (currentHealth <= 25)
+        if (currentHealth <= 175)
         {
             spriteRenderer.sprite = phase4Sprite; // フェーズ4に変更
         }
@@ -89,15 +88,11 @@ public class TEKIHP : MonoBehaviour
         {
             Destroy(bullet);
         }
-
+        Invoke("changeEnd", 0.5f);
         Destroy(gameObject); // 敵を消す
 
-        
-
-
         // ボタンとテキストを表示する
-        retryButton.SetActive(true);
-        nextButton.SetActive(true);
+       
         gameClearText.SetActive(true);
 
         // ゲームクリアBGMを再生する
@@ -111,6 +106,14 @@ public class TEKIHP : MonoBehaviour
 
         // コインを追加する
         CoinManager.instance.AddCoins(coinsToAdd);
+        Debug.Log("coin");
+      
+        
+    }
+    public void changeEnd()
+    {
+        Debug.Log("end");
+        SceneManager.LoadScene("エンディング"); // 次のシーン名を指定
     }
 
     private IEnumerator Flash()

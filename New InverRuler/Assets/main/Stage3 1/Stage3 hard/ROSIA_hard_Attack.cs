@@ -1,9 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ROSIA : MonoBehaviour
+public class ROSIA_hard_Attack : MonoBehaviour
 {
     public GameObject onePrefab; //弾のプレハブ
     public GameObject twoPrefab; //弾のプレハブ
@@ -12,7 +11,7 @@ public class ROSIA : MonoBehaviour
     public Transform firePoint;     //発射位置のプレハブ
     public float attackCooldown = 1.0f;
     private float lastAttackTime;
-    private TEKIHP1 bossHealth;      //ボスの体力
+    private ROSIA_hard_HP bossHealth;      //ボスの体力
 
     public float fireRate = 1f;      // 発射間隔
     public float bulletSpeed = 5f;   // 弾の速度
@@ -39,7 +38,7 @@ public class ROSIA : MonoBehaviour
     void Start()
     {
         lastAttackTime = -attackCooldown; // 最初の攻撃がすぐにできるように設定
-        bossHealth = GetComponentInParent<TEKIHP1>(); // 親オブジェクトからBossHealthを取得
+        bossHealth = GetComponentInParent<ROSIA_hard_HP>(); // 親オブジェクトからBossHealthを取得
 
         startPosition = transform.position;
         player = GameObject.FindGameObjectWithTag("Player").transform; // プレイヤーを検索
@@ -55,15 +54,15 @@ public class ROSIA : MonoBehaviour
         {
             if (bossHealth != null)
             {
-                if (bossHealth.currentHealth > 74)
+                if (bossHealth.currentHealth > 1500)
                 {
                     AttackPattern1();
                 }
-                else if (bossHealth.currentHealth > 49)
+                else if (bossHealth.currentHealth > 1000)
                 {
                     AttackPattern2();
                 }
-                else if (bossHealth.currentHealth > 24)
+                else if (bossHealth.currentHealth > 500)
                 {
                     AttackPattern3();
                 }
@@ -128,7 +127,7 @@ public class ROSIA : MonoBehaviour
 
     void ReturnToPlayer()
     {
-        
+
 
         // プレイヤーに向かって戻る
         Vector3 direction = player.position - transform.position;

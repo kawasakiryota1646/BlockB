@@ -12,7 +12,7 @@ public class TEKIAttack : MonoBehaviour
     public float bulletSpeed = 5f;
     public float attackCooldown = 1.0f;
     private float lastAttackTime;
-    private TEKIHP bossHealth;      //ボスの体力
+    private JapanHP bossHealth;      //ボスの体力
     public float randomSpeed = 5f;  // 弾の速度
     public int   randomCount = 10;    // 発射する弾の数
 
@@ -26,7 +26,7 @@ public class TEKIAttack : MonoBehaviour
     void Start()
     {
         lastAttackTime = -attackCooldown; // 最初の攻撃がすぐにできるように設定
-        bossHealth = GetComponentInParent<TEKIHP>(); // 親オブジェクトからBossHealthを取得
+        bossHealth = GetComponentInParent<JapanHP>(); // 親オブジェクトからBossHealthを取得
 
     }
 

@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class TEKIHP1 : MonoBehaviour
+public class JapanHP : MonoBehaviour
 {
     public int maxHealth = 100;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     public float flashDuration = 0.1f;
     public GameObject[] deathEffects; // 死亡時のエフェクト（3段階）
-
+    public GameObject retryButton; // リトライボタン
+    public GameObject nextButton; // 次へボタン
     public GameObject gameClearText; // GAMEクリアのテキスト
     public BGMController bgmController; // BGMコントローラー
     public GameObject coinPrefab; // コインのプレハブ
@@ -32,7 +32,8 @@ public class TEKIHP1 : MonoBehaviour
         originalColor = spriteRenderer.color;
 
         // ボタンとテキストを非表示にする
-     
+        retryButton.SetActive(false);
+        nextButton.SetActive(false);
         gameClearText.SetActive(false);
     }
 
@@ -66,7 +67,7 @@ public class TEKIHP1 : MonoBehaviour
         if (currentHealth <= 0)
         {
             StartCoroutine(Die());
-           
+
         }
         StartCoroutine(Flash());
     }
@@ -91,8 +92,12 @@ public class TEKIHP1 : MonoBehaviour
 
         Destroy(gameObject); // 敵を消す
 
+
+
+
         // ボタンとテキストを表示する
-       
+        retryButton.SetActive(true);
+        nextButton.SetActive(true);
         gameClearText.SetActive(true);
 
         // ゲームクリアBGMを再生する
@@ -106,9 +111,6 @@ public class TEKIHP1 : MonoBehaviour
 
         // コインを追加する
         CoinManager.instance.AddCoins(coinsToAdd);
-
-        // シーンを切り替える
-        SceneManager.LoadScene("エンディング"); // 次のシーン名を指定
     }
 
     private IEnumerator Flash()
@@ -143,4 +145,5 @@ public class TEKIHP1 : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
     }
+
 }
