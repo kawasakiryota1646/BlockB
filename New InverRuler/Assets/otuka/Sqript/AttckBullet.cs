@@ -15,5 +15,14 @@ public class AttckBullet : MonoBehaviour
             enemy.TakeDamage(damage);
             Destroy(gameObject); // ’e‚ğÁ‚·
         }
+
+        TEKIHP1 enemy1 = other.gameObject.GetComponent<TEKIHP1>();
+        if (enemy1 != null)
+        {
+            enemy1.TakeDamage(damage);
+            Destroy(gameObject); // ’e‚ğÁ‚·
+        }
+
+
     }
 }
