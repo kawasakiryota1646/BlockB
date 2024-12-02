@@ -27,5 +27,14 @@ public class BulletFriend : MonoBehaviour
             // ’e‚ğ”j‰ó‚·‚é
             Destroy(gameObject);
         }
+
+        TEKIHP1 enemy1 = collision.GetComponent<TEKIHP1>();
+        if (enemy1 != null)
+        {
+            // “G‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚é
+            enemy1.TakeDamage(damage);
+            // ’e‚ğ”j‰ó‚·‚é
+            Destroy(gameObject);
+        }
     }
 }
