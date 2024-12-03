@@ -12,6 +12,7 @@ public class TEKIHP1 : MonoBehaviour
     public GameObject[] deathEffects; // 死亡時のエフェクト（3段階）
 
     public GameObject gameClearText; // GAMEクリアのテキスト
+    public GameObject NEXTButton; // GAMEクリアのテキスト
     public BGMController bgmController; // BGMコントローラー
     public GameObject coinPrefab; // コインのプレハブ
     public int coinCount = 10; // 生成するコインの数
@@ -34,6 +35,7 @@ public class TEKIHP1 : MonoBehaviour
         // ボタンとテキストを非表示にする
      
         gameClearText.SetActive(false);
+        NEXTButton.SetActive(false);
     }
 
     void UpdateBossAppearance()
@@ -92,7 +94,7 @@ public class TEKIHP1 : MonoBehaviour
         Destroy(gameObject); // 敵を消す
 
         // ボタンとテキストを表示する
-       
+        NEXTButton.SetActive(true);
         gameClearText.SetActive(true);
 
         // ゲームクリアBGMを再生する
@@ -107,14 +109,10 @@ public class TEKIHP1 : MonoBehaviour
         // コインを追加する
         CoinManager.instance.AddCoins(coinsToAdd);
         Debug.Log("coin");
-      
+
         
     }
-    public void changeEnd()
-    {
-        Debug.Log("end");
-        SceneManager.LoadScene("エンディング"); // 次のシーン名を指定
-    }
+    
 
     private IEnumerator Flash()
     {
