@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b479d60c0b7295f49895fae6927131e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 700
   flashDuration: 0.1
   deathEffects:
   - {fileID: 205398590896992992, guid: 851a771a406db274e9d5a38a2ebe072c, type: 3}
@@ -1468,6 +1468,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2576517156193728557, guid: e1d3655b0e5e5c94b9ffa2d1bb8d181e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5742739286721824463, guid: e1d3655b0e5e5c94b9ffa2d1bb8d181e, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1429005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5742739286721824463, guid: e1d3655b0e5e5c94b9ffa2d1bb8d181e, type: 3}
+      propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5742739286721824463, guid: e1d3655b0e5e5c94b9ffa2d1bb8d181e, type: 3}

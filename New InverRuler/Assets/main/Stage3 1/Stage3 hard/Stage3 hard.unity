@@ -1567,6 +1567,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5742739286721824463, guid: e1d3655b0e5e5c94b9ffa2d1bb8d181e, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1600251
+      objectReference: {fileID: 0}
+    - target: {fileID: 5742739286721824463, guid: e1d3655b0e5e5c94b9ffa2d1bb8d181e, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.04000631
+      objectReference: {fileID: 0}
+    - target: {fileID: 5742739286721824463, guid: e1d3655b0e5e5c94b9ffa2d1bb8d181e, type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
@@ -2517,6 +2525,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e50435ddbd22c7a4ca05425ba5a5a658, type: 3}
+    - target: {fileID: 7592135171838678178, guid: 001a17b0c22f6194692304d3685ef928, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8551017797115726970, guid: 001a17b0c22f6194692304d3685ef928, type: 3}
       propertyPath: m_SizeDelta.x
       value: 294.04
