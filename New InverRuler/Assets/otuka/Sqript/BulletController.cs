@@ -26,7 +26,7 @@ public class BulletController : MonoBehaviour
     void Update()
     {
         // ゲームの状態を確認してから弾を発射
-        if (playerController != null && PlayerController.gameState == "playing" && Input.GetMouseButtonDown(1) && currentBullets > 0) // 右クリック
+        if (playerController != null && PlayerController.gameState == "playing" && Input.GetMouseButtonDown(0) && currentBullets > 0) // 右クリック
         {
             // 発射効果音を再生
             if (shootAudioSource != null)

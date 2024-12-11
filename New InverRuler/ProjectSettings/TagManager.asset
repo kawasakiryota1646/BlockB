@@ -10,6 +10,7 @@ TagManager:
   - FriendBullet
   - Wall
   - PlayerBullet
+  - Heart
   layers:
   - Default
   - TransparentFX

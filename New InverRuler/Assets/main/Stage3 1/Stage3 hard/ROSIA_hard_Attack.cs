@@ -140,7 +140,6 @@ public class ROSIA_hard_Attack : MonoBehaviour
         }
     }
 
-
     void AttackPattern3()
     {
 
@@ -185,6 +184,7 @@ public class ROSIA_hard_Attack : MonoBehaviour
         }
 
     }
+
 
 
 

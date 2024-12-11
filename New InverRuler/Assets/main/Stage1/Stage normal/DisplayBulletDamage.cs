@@ -12,7 +12,7 @@ public class DisplayBulletDamage : MonoBehaviour
 
     void UpdateDamageText()
     {
-        damageText.text = "’e‚ÌˆÐ—Í: " + AttckBullet.damage.ToString();
+        damageText.text = "’e‚ÌˆÐ—Í: " + PlayerPrefs.GetFloat("AttckBulletDamage", AttckBullet.damage).ToString();
     }
 
     void Update()

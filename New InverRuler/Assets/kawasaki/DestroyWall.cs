@@ -21,7 +21,10 @@ public class DestroyWall : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-
+        if (collision.gameObject.tag == "Heart")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 
 }

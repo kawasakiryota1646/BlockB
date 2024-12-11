@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class TEKIHP1 : MonoBehaviour
@@ -25,21 +26,22 @@ public class TEKIHP1 : MonoBehaviour
     public Sprite phase2Sprite;
     public Sprite phase3Sprite;
     public Sprite phase4Sprite;
-
+    public Text ammoText;
     void Start()
     {
         currentHealth = maxHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
-
+        UpdateAmmoText();
         // ボタンとテキストを非表示にする
-     
+
         gameClearText.SetActive(false);
         NEXTButton.SetActive(false);
     }
 
     void UpdateBossAppearance()
     {
+        UpdateAmmoText();
         if (currentHealth <= 525)
         {
             spriteRenderer.sprite = phase2Sprite; // フェーズ2に変更
@@ -52,14 +54,17 @@ public class TEKIHP1 : MonoBehaviour
         {
             spriteRenderer.sprite = phase4Sprite; // フェーズ4に変更
         }
+        UpdateAmmoText();
     }
 
 
     public void TakeDamage(float damage)
     {
+        UpdateAmmoText();
         UpdateBossAppearance();
 
         currentHealth -= damage;
+        UpdateAmmoText();
         // ダメージ効果音を再生
         if (damageAudioSource != null)
         {
@@ -71,12 +76,18 @@ public class TEKIHP1 : MonoBehaviour
            
         }
         StartCoroutine(Flash());
+        UpdateAmmoText();
     }
 
     IEnumerator Die()
     {
+        currentHealth = 0;
+        UpdateAmmoText();
         yield return StartCoroutine(HandleExplosion()); // コルーチンを開始
         Debug.Log("Boss died");
+
+        // ボスを倒したことを記録
+        PlayerPrefs.SetInt("BossDefeated", 1);
 
         AudioSource audioSource = GetComponent<AudioSource>();
         if (audioSource != null)
@@ -110,12 +121,15 @@ public class TEKIHP1 : MonoBehaviour
         CoinManager.instance.AddCoins(coinsToAdd);
         Debug.Log("coin");
 
+       
+
         
     }
     
 
     private IEnumerator Flash()
     {
+        UpdateAmmoText();
         spriteRenderer.color = Color.red; // 点滅色
         yield return new WaitForSeconds(flashDuration);
         spriteRenderer.color = originalColor;
@@ -145,5 +159,11 @@ public class TEKIHP1 : MonoBehaviour
             Destroy(effect, 1.0f); // 1秒後にエフェクトを消去
             yield return new WaitForSeconds(0.2f);
         }
+        UpdateAmmoText();
+    }
+
+    void UpdateAmmoText()
+    {
+        ammoText.text = "残りHP: " + currentHealth;
     }
 }

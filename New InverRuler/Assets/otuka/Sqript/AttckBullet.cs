@@ -5,7 +5,14 @@ using UnityEngine;
 public class AttckBullet : MonoBehaviour
 {
     public static float damage = 5f;  // ’e‚ÌUŒ‚—Í
-  
+
+
+    void Awake()
+    {
+        damage = 5;
+        // •Û‘¶‚³‚ê‚½’e‚ÌˆĞ—Í‚ğ“Ç‚İ‚Ş
+        damage = PlayerPrefs.GetFloat("AttckBulletDamage", 5f);
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -24,7 +31,6 @@ public class AttckBullet : MonoBehaviour
             Destroy(gameObject); // ’e‚ğÁ‚·
         }
 
-
         JapanHP enemy2 = other.gameObject.GetComponent<JapanHP>();
         if (enemy2 != null)
         {
@@ -32,7 +38,7 @@ public class AttckBullet : MonoBehaviour
             Destroy(gameObject); // ’e‚ğÁ‚·
         }
 
-        HardJapanHP enemy3= other.gameObject.GetComponent<HardJapanHP>();
+        HardJapanHP enemy3 = other.gameObject.GetComponent<HardJapanHP>();
         if (enemy3 != null)
         {
             enemy3.TakeDamage(damage);

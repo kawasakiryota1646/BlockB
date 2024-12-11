@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class ROSIA_hard_HP : MonoBehaviour
 {
     public int maxHealth = 100;
@@ -12,6 +12,7 @@ public class ROSIA_hard_HP : MonoBehaviour
     public GameObject[] deathEffects; // 死亡時のエフェクト（3段階）
 
     public GameObject gameClearText; // GAMEクリアのテキスト
+    public GameObject NEXTButton;
     public BGMController bgmController; // BGMコントローラー
     public GameObject coinPrefab; // コインのプレハブ
     public int coinCount = 10; // 生成するコインの数
@@ -24,20 +25,22 @@ public class ROSIA_hard_HP : MonoBehaviour
     public Sprite phase2Sprite;
     public Sprite phase3Sprite;
     public Sprite phase4Sprite;
-
+    public Text ammoText;
     void Start()
     {
+
         currentHealth = maxHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
-
+        UpdateAmmoText();
         // ボタンとテキストを非表示にする
-
+        NEXTButton.SetActive(false);
         gameClearText.SetActive(false);
     }
 
     void UpdateBossAppearance()
     {
+        UpdateAmmoText();
         if (currentHealth <= 1500)
         {
             spriteRenderer.sprite = phase2Sprite; // フェーズ2に変更
@@ -50,11 +53,13 @@ public class ROSIA_hard_HP : MonoBehaviour
         {
             spriteRenderer.sprite = phase4Sprite; // フェーズ4に変更
         }
+        UpdateAmmoText();
     }
 
 
     public void TakeDamage(float damage)
     {
+        UpdateAmmoText();
         UpdateBossAppearance();
 
         currentHealth -= damage;
@@ -69,10 +74,13 @@ public class ROSIA_hard_HP : MonoBehaviour
 
         }
         StartCoroutine(Flash());
+        UpdateAmmoText();
     }
 
     IEnumerator Die()
     {
+        currentHealth = 0;
+        UpdateAmmoText();
         yield return StartCoroutine(HandleExplosion()); // コルーチンを開始
         Debug.Log("Boss died");
 
@@ -92,7 +100,7 @@ public class ROSIA_hard_HP : MonoBehaviour
         Destroy(gameObject); // 敵を消す
 
         // ボタンとテキストを表示する
-
+        NEXTButton.SetActive(true);
         gameClearText.SetActive(true);
 
         // ゲームクリアBGMを再生する
@@ -113,6 +121,7 @@ public class ROSIA_hard_HP : MonoBehaviour
 
     private IEnumerator Flash()
     {
+        UpdateAmmoText();
         spriteRenderer.color = Color.red; // 点滅色
         yield return new WaitForSeconds(flashDuration);
         spriteRenderer.color = originalColor;
@@ -135,6 +144,7 @@ public class ROSIA_hard_HP : MonoBehaviour
 
     IEnumerator HandleExplosion()
     {
+        UpdateAmmoText();
         // 3段階のエフェクトを0.2秒ずつ表示
         foreach (GameObject effectPrefab in deathEffects)
         {
@@ -142,5 +152,10 @@ public class ROSIA_hard_HP : MonoBehaviour
             Destroy(effect, 1.0f); // 1秒後にエフェクトを消去
             yield return new WaitForSeconds(0.2f);
         }
+    }
+
+    void UpdateAmmoText()
+    {
+        ammoText.text = "残りHP: " + currentHealth;
     }
 }

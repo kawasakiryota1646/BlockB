@@ -10,30 +10,38 @@ public class PlayerController : MonoBehaviour
     float axisH; //横軸
     float axisV; //縦軸
     Rigidbody2D rbody; //Rigidbody2D
-    //ダメージ対応
+                       //ダメージ対応
+
     public static int hp = 3; //プレイヤーのHP
     public static string gameState; //ゲームの状態
-    bool inDamage = false; //ダメージ中フラグ
-
+    bool inDamage = true; //ダメージ中フラグ
+    public SpriteRenderer spriteRenderer;
+    private Color originalColor;
+    public float flashDuration = 0.5f;
     public GameObject[] deathEffects; // 死亡時のエフェクト（3段階）
     public GameObject gameOverUI; // ゲームオーバー時のUI
-    public GameObject Button1UI; // ゲームオーバー時のUI
-    public GameObject Button2UI; // ゲームオーバー時のUI
+    public GameObject retryUI; // ゲームオーバー時のUI
+    public GameObject StageSelectUI; // ゲームオーバー時のUI
     public GameObject gameStartText; // GAME STARTのテキスト
     public BGMController bgmController; // BGMコントローラー
     public AudioSource damageAudioSource; // ダメージ効果音用
     public AudioSource explosionAudioSource; // 爆発効果音用
-
+    public GameObject healthPickupPrefab; // 回復アイテムのプレハブ
+    public Transform cameraTransform; // カメラのTransform
+    public float spawnRangeX = 10f; // X軸方向の出現範囲
+    public float spawnHeight = 4f; // Y軸方向の出現高さ
     // Start is called before the first frame update
     void Start()
     {
         Application.targetFrameRate = 60; // FPSを60に固定
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
         rbody = GetComponent<Rigidbody2D>(); //Rigidbody2Dを得る
         gameState = "playing"; //ゲームの状態をプレイ中にする
         gameOverUI.SetActive(false); // ゲームオーバーUIを非表示にする
-        Button1UI.SetActive(false); // ゲームオーバーUIを非表示にする
-        Button2UI.SetActive(false); // ゲームオーバーUIを非表示にする
-
+        retryUI.SetActive(false); // ゲームオーバーUIを非表示にする
+        StageSelectUI.SetActive(false); // ゲームオーバーUIを非表示にする
+        StartCoroutine(SpawnHealthPickups()); // 回復アイテムを出現させるコルーチンを開始
         // GAME STARTテキストを表示するコルーチンを開始
         StartCoroutine(ShowGameStartText());
     }
@@ -70,8 +78,11 @@ public class PlayerController : MonoBehaviour
     {
         if (gameState == "playing")
         {
-            
-            hp--; //を減らす
+            if (inDamage == true)
+            {
+                hp--;
+            }
+
             if (hp > 0)
             {
                 // ダメージ効果音を再生
@@ -80,15 +91,41 @@ public class PlayerController : MonoBehaviour
                     damageAudioSource.Play();
                 }
                 //ダメージフラグON
-                inDamage = true;
-                Invoke("DamageEnd", 0.25f);
+                inDamage = false;
+                Debug.Log("false");
+                StartCoroutine(Flash());
+                Invoke("DamageEnd", 0.5f); // 0.5秒後に無敵状態を終了
+                // hpが3未満の場合、回復アイテムを出現させる
+                if (hp < 3)
+                {
+                    Vector3 spawnPosition = new Vector3(cameraTransform.position.x, cameraTransform.position.y + 5, 0);
+                    Instantiate(healthPickupPrefab, spawnPosition, Quaternion.identity);
+                }
             }
         }
     }
 
-    public void Clear()
+    void DamageEnd()
     {
-        // クリア時の処理
+        inDamage = true;
+        Debug.Log("true");
+    }
+
+    IEnumerator SpawnHealthPickups()
+    {
+        while (true)
+        {
+            
+
+            if (hp < 3)
+            {
+                yield return new WaitForSeconds(5f); // 5秒待つ
+                float randomX = Random.Range(cameraTransform.position.x - spawnRangeX, cameraTransform.position.x + spawnRangeX);
+                float spawnY = cameraTransform.position.y + spawnHeight;
+                Vector3 spawnPosition = new Vector3(randomX, spawnY, 0);
+                Instantiate(healthPickupPrefab, spawnPosition, Quaternion.identity);
+            }
+        }
     }
 
     //ゲームオーバー
@@ -97,7 +134,11 @@ public class PlayerController : MonoBehaviour
         gameState = "gameover";
         // プレイヤーの操作を無効にする
         GetComponent<PlayerController>().enabled = false;
-
+        GameObject[] healthPickups = GameObject.FindGameObjectsWithTag("Heart");
+        foreach (GameObject pickup in healthPickups)
+        {
+            Destroy(pickup);
+        }
         // 爆発効果音を再生
         AudioSource audioSource = GetComponent<AudioSource>();
         if (audioSource != null)
@@ -117,8 +158,8 @@ public class PlayerController : MonoBehaviour
 
         // ゲームオーバーUIを表示
         gameOverUI.SetActive(true);
-        Button1UI.SetActive(true);
-        Button2UI.SetActive(true);
+        retryUI.SetActive(true);
+        StageSelectUI.SetActive(true);
 
         // ゲームオーバーBGMを再生する
         if (bgmController != null)
@@ -131,6 +172,17 @@ public class PlayerController : MonoBehaviour
     public void ResetPlayerHealth()
     {
         hp = 3; // 初期値に戻す
+    }
+
+    private IEnumerator Flash()
+    {
+        while (!inDamage)
+        {
+            spriteRenderer.color = Color.red; // 点滅色
+            yield return new WaitForSeconds(flashDuration);
+            spriteRenderer.color = originalColor;
+            yield return new WaitForSeconds(flashDuration);
+        }
     }
 
     // GAME STARTテキストを表示し、ゲームを停止するコルーチン

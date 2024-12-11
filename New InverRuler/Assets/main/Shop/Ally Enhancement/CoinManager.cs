@@ -5,7 +5,7 @@ using UnityEngine;
 public class CoinManager : MonoBehaviour
 {
     public static CoinManager instance;
-    public int coinCount = 0; // ‰Šú’l‚ğ0‚Éİ’è
+    public static int coinCount = 0; // ‰Šú’l‚ğ0‚Éİ’è
 
     private void Awake()
     {
@@ -20,14 +20,39 @@ public class CoinManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        LoadCoins();
+    }
+
     public void AddCoins(int amount)
     {
         coinCount += amount;
+        SaveCoins();
     }
 
     public void RemoveCoins(int amount)
     {
         coinCount -= amount;
+        SaveCoins();
+    }
+
+    private void SaveCoins()
+    {
+        PlayerPrefs.SetInt("CoinCount", coinCount);
+        PlayerPrefs.Save();
+    }
+
+    private void LoadCoins()
+    {
+        if (PlayerPrefs.HasKey("CoinCount"))
+        {
+            coinCount = PlayerPrefs.GetInt("CoinCount");
+        }
+        else
+        {
+            coinCount = 0;
+        }
     }
 }
 

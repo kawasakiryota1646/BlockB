@@ -6,12 +6,15 @@ public class BulletFriend : MonoBehaviour
 {
     public float speed = 20f;     // ’e‚Ì‘¬“x
     public float lifeTime = 2f;   // ’e‚Ìõ–½
-    public int damage = 1;        //’e‚Ìƒ_ƒ[ƒW
+    public static float damage = 1f; // ’e‚Ìƒ_ƒ[ƒW
 
     void Start()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.forward * speed;
+
+        // ’e‚ÌˆĞ—Í‚ğPlayerPrefs‚©‚ç“Ç‚İ‚Ş
+        damage = PlayerPrefs.GetFloat("BulletFriendDamage", 1f);
 
         Destroy(gameObject, lifeTime);  // ˆê’èŠÔŒã‚É’e‚ğíœ
     }
@@ -73,4 +76,3 @@ public class BulletFriend : MonoBehaviour
         }
     }
 }
-

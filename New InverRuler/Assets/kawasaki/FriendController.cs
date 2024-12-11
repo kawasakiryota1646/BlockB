@@ -20,6 +20,16 @@ public class FriendController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (other.gameObject.tag == "Player")
+        {
+            // Õ“Ë‚ğ–³Œø‚É‚·‚éˆ—
+            Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
+        }
+        if (other.gameObject.tag == "friend")
+        {
+            // Õ“Ë‚ğ–³Œø‚É‚·‚éˆ—
+            Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
+        }
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet"))
         {
             AudioSource audioSource = GetComponent<AudioSource>();

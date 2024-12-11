@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class friendBULLET : MonoBehaviour
 {
-    public static float damage = 1f;  // ’e‚ÌUŒ‚—Í
+    public static float damage = 0f;  // ’e‚ÌUŒ‚—Í
 
     void OnTriggerEnter2D(Collider2D other)
     {

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+
 public class BuletDamage : MonoBehaviour
 {
     public Text damageText;
@@ -11,7 +12,7 @@ public class BuletDamage : MonoBehaviour
 
     void UpdateDamageText()
     {
-        damageText.text = "’e‚ÌˆÐ—Í: " + friendBULLET.damage.ToString();
+        damageText.text = "’e‚ÌˆÐ—Í: " + PlayerPrefs.GetFloat("BulletFriendDamage", BulletFriend.damage).ToString();
     }
 
     void Update()

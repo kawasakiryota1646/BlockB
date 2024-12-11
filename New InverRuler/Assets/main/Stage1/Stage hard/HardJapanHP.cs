@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HardJapanHP : MonoBehaviour
 {
@@ -24,13 +25,13 @@ public class HardJapanHP : MonoBehaviour
     public Sprite phase2Sprite;
     public Sprite phase3Sprite;
     public Sprite phase4Sprite;
-
+    public Text ammoText;
     void Start()
     {
         currentHealth = maxHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
-
+        UpdateAmmoText();
         // ボタンとテキストを非表示にする
         retryButton.SetActive(false);
         nextButton.SetActive(false);
@@ -51,6 +52,7 @@ public class HardJapanHP : MonoBehaviour
         {
             spriteRenderer.sprite = phase4Sprite; // フェーズ4に変更
         }
+        UpdateAmmoText();
     }
 
 
@@ -70,10 +72,13 @@ public class HardJapanHP : MonoBehaviour
 
         }
         StartCoroutine(Flash());
+        UpdateAmmoText();
     }
 
     IEnumerator Die()
     {
+        currentHealth = 0;
+        UpdateAmmoText();
         yield return StartCoroutine(HandleExplosion()); // コルーチンを開始
         Debug.Log("Boss died");
 
@@ -115,6 +120,7 @@ public class HardJapanHP : MonoBehaviour
 
     private IEnumerator Flash()
     {
+        UpdateAmmoText();
         spriteRenderer.color = Color.red; // 点滅色
         yield return new WaitForSeconds(flashDuration);
         spriteRenderer.color = originalColor;
@@ -137,6 +143,7 @@ public class HardJapanHP : MonoBehaviour
 
     IEnumerator HandleExplosion()
     {
+        UpdateAmmoText();
         // 3段階のエフェクトを0.2秒ずつ表示
         foreach (GameObject effectPrefab in deathEffects)
         {
@@ -144,6 +151,11 @@ public class HardJapanHP : MonoBehaviour
             Destroy(effect, 1.0f); // 1秒後にエフェクトを消去
             yield return new WaitForSeconds(0.2f);
         }
+    }
+
+    void UpdateAmmoText()
+    {
+        ammoText.text = "残りHP: " + currentHealth;
     }
 
 }

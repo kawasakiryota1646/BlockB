@@ -18,11 +18,17 @@ EditorBuildSettings:
     path: Assets/main/Stage1/Stage normal/formation normal.unity
     guid: 37515a29809c7b648b3fb9776c40f08d
   - enabled: 1
+    path: Assets/main/Stage1/Stage normal/formation normal boss.unity
+    guid: ec80ce818b30b7b4d920128e45f151f6
+  - enabled: 1
     path: Assets/main/Stage1/Stage normal/Stage normal.unity
     guid: 43ffcb3993f217b42b01bb022cb9b177
   - enabled: 1
     path: Assets/main/Stage1/Stage hard/formation haed.unity
     guid: e238aa5c717605a44ad4681cd252601a
+  - enabled: 1
+    path: Assets/main/Stage1/Stage hard/formation haed Boss.unity
+    guid: 587de1a63eec18544a7dca13e7aa5413
   - enabled: 1
     path: Assets/main/Stage1/Stage hard/Stage hard.unity
     guid: c93b6ba0bf7633e43bb034f6b9f72a47
@@ -33,8 +39,14 @@ EditorBuildSettings:
     path: Assets/main/Stage2 1/Stage2 normal/formation2 normal.unity
     guid: 67c49e095cef48b488b5c589d416ce7a
   - enabled: 1
+    path: Assets/main/Stage2 1/Stage2 normal/formation2 normal Boss.unity
+    guid: 9c7c1ae64e5772948b4e3beeb54dee56
+  - enabled: 1
     path: Assets/main/Stage2 1/Stage2 hard/formation2 hard.unity
     guid: 9fa0f99e822032c4286678b8e51b9d18
+  - enabled: 1
+    path: Assets/main/Stage2 1/Stage2 hard/formation2 hard boss.unity
+    guid: a3509e6f5f99e304eb1408e013cef707
   - enabled: 1
     path: Assets/main/Stage2 1/Stage2 hard/Stage2 hard.unity
     guid: 73ba01aae8cd4814b822cd683d5e6e73
@@ -42,11 +54,17 @@ EditorBuildSettings:
     path: Assets/main/Stage3 1/Stage3 normal/formation3 normal.unity
     guid: e7b821881fe73c44db68839389a34e48
   - enabled: 1
+    path: Assets/main/Stage3 1/Stage3 normal/formation3 normal Boss.unity
+    guid: 4f0ab319c16b47d4faade7b574560c57
+  - enabled: 1
     path: Assets/main/Stage3 1/Stage3 normal/Stage3 normal.unity
     guid: f76a49cb618c2984abe1655c86db7fcf
   - enabled: 1
     path: Assets/main/Stage3 1/Stage3 hard/formation3 hard.unity
     guid: d592fa7111d2c5f448c5f527a2d82b6b
+  - enabled: 1
+    path: Assets/main/Stage3 1/Stage3 hard/formation3 hard boss.unity
+    guid: fc37821a854483d4388855d36706a5fe
   - enabled: 1
     path: Assets/main/Stage3 1/Stage3 hard/Stage3 hard.unity
     guid: d97b581a6a4d5894b96777975bc5bcae
@@ -54,8 +72,14 @@ EditorBuildSettings:
     path: Assets/main/result/result.unity
     guid: 601ed8f1f488a6c4da7049ce358e8408
   - enabled: 1
+    path: "Assets/main/\u30CF\u30FC\u30C9\u30B9\u30C6\u30FC\u30B8/hard.unity"
+    guid: 549d2de79598b4f4c9b95eae5007cc4d
+  - enabled: 1
     path: Assets/main/result/result2.unity
     guid: e0d750805f149fa41bf0b96a7738504d
+  - enabled: 1
+    path: Assets/main/result/result3.unity
+    guid: 3e3ef06ff4ad0d4468110bca785a2567
   - enabled: 1
     path: Assets/main/Shop/Ally Enhancement/Ally Enhancement.unity
     guid: c65c44be2dcae7449b32952b54b7fb6c
@@ -65,6 +89,10 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/main/\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0/\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0.unity"
     guid: 489a1ea8d49eb02449f3eec6b8a514b5
+  - enabled: 1
+    path: "Assets/main/\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0/\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0
+      1.unity"
+    guid: c93b79541104cb74abd8acff783ae174
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

@@ -12,20 +12,16 @@ public class StageSelectManager : MonoBehaviour
     public GameObject stage1Options; // Stage1のオプションボタンを含むGameObject
     public GameObject stage2Options; // Stage2のオプションボタンを含むGameObject
     public GameObject stage3Options; // Stage3のオプションボタンを含むGameObject
-    public GameObject stage1Options2; // Stage1のオプションボタン2を含むGameObject
-    public GameObject stage2Options2; // Stage2のオプションボタン2を含むGameObject
-    public GameObject stage3Options2; // Stage3のオプションボタン2を含むGameObject
+
 
     void Start()
     {
-        stage1Options.SetActive(false); // 最初は非表示にする
-        stage2Options.SetActive(false); // 最初は非表示にする
-        stage3Options.SetActive(false); // 最初は非表示にする
-        stage1Options2.SetActive(false); // 最初は非表示にする
-        stage2Options2.SetActive(false); // 最初は非表示にする
-        stage3Options2.SetActive(false); // 最初は非表示にする
+    stage1Options.SetActive(false); // ノーマルステージのボタンを表示
+    stage2Options.SetActive(false); // ノーマルステージのボタンを表示
+    stage3Options.SetActive(false); // ノーマルステージのボタンを表示
+   
     }
-
+    
     public void OnStage1ButtonClick()
     {
         AudioSource audioSource = GetComponent<AudioSource>();
@@ -36,9 +32,7 @@ public class StageSelectManager : MonoBehaviour
         stage1Options.SetActive(true); // Stage1のオプションを表示
         stage2Options.SetActive(false); // Stage2のオプションを非表示
         stage3Options.SetActive(false); // Stage3のオプションを非表示
-        stage1Options2.SetActive(true); // Stage1のオプションを表示
-        stage2Options2.SetActive(false); // Stage2のオプションを非表示
-        stage3Options2.SetActive(false); // Stage3のオプションを非表示
+
     }
 
     public void OnStage2ButtonClick()
@@ -51,9 +45,7 @@ public class StageSelectManager : MonoBehaviour
         stage1Options.SetActive(false); // Stage1のオプションを非表示
         stage2Options.SetActive(true); // Stage2のオプションを表示
         stage3Options.SetActive(false); // Stage3のオプションを非表示
-        stage1Options2.SetActive(false); // Stage1のオプションを非表示
-        stage2Options2.SetActive(true); // Stage2のオプションを表示
-        stage3Options2.SetActive(false); // Stage3のオプションを非表示
+    
     }
 
     public void OnStage3ButtonClick()
@@ -66,9 +58,7 @@ public class StageSelectManager : MonoBehaviour
         stage1Options.SetActive(false); // Stage1のオプションを非表示
         stage2Options.SetActive(false); // Stage2のオプションを非表示
         stage3Options.SetActive(true); // Stage3のオプションを表示
-        stage1Options2.SetActive(false); // Stage1のオプションを非表示
-        stage2Options2.SetActive(false); // Stage2のオプションを非表示
-        stage3Options2.SetActive(true); // Stage3のオプションを表示
+  
     }
 }
 

@@ -152,12 +152,16 @@ MonoBehaviour:
   speed: 3.5
   deathEffects: []
   gameOverUI: {fileID: 0}
-  Button1UI: {fileID: 0}
-  Button2UI: {fileID: 0}
+  retryUI: {fileID: 0}
+  StageSelectUI: {fileID: 0}
   gameStartText: {fileID: 0}
   bgmController: {fileID: 0}
   damageAudioSource: {fileID: 0}
   explosionAudioSource: {fileID: 0}
+  healthPickupPrefab: {fileID: 2086436487503968294, guid: cfe590e8dffed8442a2e53863aa3f62b, type: 3}
+  cameraTransform: {fileID: 0}
+  spawnRangeX: 4
+  spawnHeight: 4
 --- !u!114 &3512458204582337774
 MonoBehaviour:
   m_ObjectHideFlags: 0

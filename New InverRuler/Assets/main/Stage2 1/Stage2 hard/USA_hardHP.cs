@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class USA_hardHP : MonoBehaviour
 {
     public int maxHealth = 100;
@@ -24,13 +24,13 @@ public class USA_hardHP : MonoBehaviour
     public Sprite phase2Sprite;
     public Sprite phase3Sprite;
     public Sprite phase4Sprite;
-
+    public Text ammoText;
     void Start()
     {
         currentHealth = maxHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
-
+        UpdateAmmoText();
         // ボタンとテキストを非表示にする
         retryButton.SetActive(false);
         nextButton.SetActive(false);
@@ -39,6 +39,7 @@ public class USA_hardHP : MonoBehaviour
 
     void UpdateBossAppearance()
     {
+        UpdateAmmoText();
         if (currentHealth <= 750)
         {
             spriteRenderer.sprite = phase2Sprite; // フェーズ2に変更
@@ -51,13 +52,14 @@ public class USA_hardHP : MonoBehaviour
         {
             spriteRenderer.sprite = phase4Sprite; // フェーズ4に変更
         }
+        UpdateAmmoText();
     }
 
 
     public void TakeDamage(float damage)
     {
         UpdateBossAppearance();
-
+        UpdateAmmoText();
         currentHealth -= damage;
         // ダメージ効果音を再生
         if (damageAudioSource != null)
@@ -70,13 +72,16 @@ public class USA_hardHP : MonoBehaviour
 
         }
         StartCoroutine(Flash());
+        UpdateAmmoText();
     }
 
     IEnumerator Die()
     {
+        currentHealth = 0;
+        UpdateAmmoText();
         yield return StartCoroutine(HandleExplosion()); // コルーチンを開始
         Debug.Log("Boss died");
-
+        
         AudioSource audioSource = GetComponent<AudioSource>();
         if (audioSource != null)
         {
@@ -115,6 +120,7 @@ public class USA_hardHP : MonoBehaviour
 
     private IEnumerator Flash()
     {
+        UpdateAmmoText();
         spriteRenderer.color = Color.red; // 点滅色
         yield return new WaitForSeconds(flashDuration);
         spriteRenderer.color = originalColor;
@@ -137,6 +143,7 @@ public class USA_hardHP : MonoBehaviour
 
     IEnumerator HandleExplosion()
     {
+        
         // 3段階のエフェクトを0.2秒ずつ表示
         foreach (GameObject effectPrefab in deathEffects)
         {
@@ -144,5 +151,10 @@ public class USA_hardHP : MonoBehaviour
             Destroy(effect, 1.0f); // 1秒後にエフェクトを消去
             yield return new WaitForSeconds(0.2f);
         }
+        UpdateAmmoText();
+    }
+    void UpdateAmmoText()
+    {
+        ammoText.text = "残りHP: " + currentHealth;
     }
 }

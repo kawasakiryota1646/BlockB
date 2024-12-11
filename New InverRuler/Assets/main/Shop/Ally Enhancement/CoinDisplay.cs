@@ -9,7 +9,7 @@ public class CoinDisplay : MonoBehaviour
 
     private void Update()
     {
-        coinText.text = "çáåv:" + CoinManager.instance.coinCount.ToString();
+        coinText.text = string.Format("{0}", CoinManager.coinCount); ;
     }
 }
 
