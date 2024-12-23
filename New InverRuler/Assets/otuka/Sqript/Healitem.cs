@@ -42,8 +42,8 @@ public class Healitem : MonoBehaviour
         isSpawning = false;
 
         // 画面外の回復アイテムを消滅させる
-        battery[] ammoItems = FindObjectsOfType<battery>();
-        foreach (battery item in ammoItems)
+        Battery[] ammoItems = FindObjectsOfType<Battery>();
+        foreach (Battery item in ammoItems)
         {
             if (!item.GetComponent<Renderer>().isVisible)
             {
