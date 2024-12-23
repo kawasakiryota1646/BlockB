@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FriendIDOU : MonoBehaviour
+public class Friend_Avoid : MonoBehaviour
 {
     public float detectionRadius = 5f;
     public float avoidSpeed = 5f;
