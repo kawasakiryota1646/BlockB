@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BuletDamage : MonoBehaviour
+public class Friend_BuletDamage : MonoBehaviour
 {
     public Text damageText;
     
