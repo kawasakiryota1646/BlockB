@@ -21,7 +21,7 @@ public class AttckBullet : MonoBehaviour
             Destroy(gameObject); // íeÇè¡Ç∑
         }
 
-        TEKIHP1 enemy1 = other.gameObject.GetComponent<TEKIHP1>();
+        Russia_normal_HP enemy1 = other.gameObject.GetComponent<Russia_normal_HP>();
         if (enemy1 != null)
         {
             enemy1.TakeDamage(damage);

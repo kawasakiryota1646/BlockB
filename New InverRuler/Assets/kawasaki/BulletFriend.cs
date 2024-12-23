@@ -31,7 +31,7 @@ public class BulletFriend : MonoBehaviour
             Destroy(gameObject);
         }
 
-        TEKIHP1 enemy1 = collision.GetComponent<TEKIHP1>();
+        Russia_normal_HP enemy1 = collision.GetComponent<Russia_normal_HP>();
         if (enemy1 != null)
         {
             // “G‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚é
