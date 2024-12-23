@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class Bulletstrengthening : MonoBehaviour
 {
 
-    public AudioSource Button_Audio;
+    public AudioSource Button_Audio;//ボタンの上にマウスポインタが乗った時に再生するAudioSource
     bool first_Button = false;
-    public Button changeDamageButton;
+    public Button changeDamageButton;//味方機体の弾を強化するボタン
     public AudioSource CoinAudioSource; // ダメージ効果音用
     public Text insufficientCoinsText; // コイン不足メッセージ用
     public GameObject insufficientCoinsObject; // コイン不足時に表示するオブジェクト
@@ -19,7 +19,7 @@ public class Bulletstrengthening : MonoBehaviour
         
         purchaseCount = PlayerPrefs.GetInt("BulletStrengtheningPurchaseCount", 0); // 保存された購入回数を読み込む
         FriendBullet_Damage.damage = PlayerPrefs.GetFloat("BulletFriendDamage", 1f); // 保存された弾の威力を読み込む
-        changeDamageButton.onClick.AddListener(ChangeBulletDamage);
+        changeDamageButton.onClick.AddListener(ChangeBulletDamage);//ボタンがクリックされたらChangeBulletDamageの関数に飛ぶ
         insufficientCoinsText.gameObject.SetActive(false); // 初期状態では非表示
         insufficientCoinsObject.SetActive(false); // 初期状態では非表示
         
@@ -30,7 +30,7 @@ public class Bulletstrengthening : MonoBehaviour
     {
         int currentCost = baseCost + (purchaseCount * 5); // 現在のコイン消費量を計算
 
-        if (CoinManager.coinCount >= currentCost && FriendBullet_Damage.damage < 3f)
+        if (CoinManager.coinCount >= currentCost && FriendBullet_Damage.damage < 3f)//コインの枚数が値段より高く　弾の威力が3f以下なら中の処理を実行
         {
             // ダメージ効果音を再生
             if (CoinAudioSource != null)
@@ -42,7 +42,7 @@ public class Bulletstrengthening : MonoBehaviour
             FriendBullet_Damage.damage += 1f; // ダメージを+1する
             if (FriendBullet_Damage.damage > 3f)
             {
-                FriendBullet_Damage.damage = 3f; // 上限を5に設定
+                FriendBullet_Damage.damage = 3f; // 上限を3に設定
             }
             PlayerPrefs.SetFloat("BulletFriendDamage", FriendBullet_Damage.damage); // 弾の威力を保存
             
@@ -52,13 +52,14 @@ public class Bulletstrengthening : MonoBehaviour
             PlayerPrefs.SetInt("BulletStrengtheningPurchaseCount", purchaseCount); // 購入回数を保存
             UpdateCostText(); // 値段を更新
         }
-        else if (FriendBullet_Damage.damage >= 3f)
+        else if (FriendBullet_Damage.damage >= 3f)//味方機体の弾の威力が最大なら中の処理を実行
         {
+
             insufficientCoinsText.text = "弾の威力は最大です"; // 上限に達したメッセージを設定
             insufficientCoinsText.gameObject.SetActive(true); // メッセージを表示
             insufficientCoinsObject.SetActive(true); // オブジェクトを表示
         }
-        else
+        else//どれも当てはまらないなら中の処理を実行
         {
             insufficientCoinsText.text = "コインが足りません"; // メッセージを設定
             insufficientCoinsText.gameObject.SetActive(true); // メッセージを表示

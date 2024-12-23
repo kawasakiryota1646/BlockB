@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class BulletController : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public Transform firePoint;
-    public Text ammoText;
+    public GameObject bulletPrefab;//プレイヤーの弾のプレハブ
+    public Transform firePoint;//プレイヤーの弾の発射位置
+    public Text ammoText;//プレイヤーの弾の現在の残り弾数
     public float bulletSpeed = 10f; // 弾の速度
-    public int bulletDamage = 5;
-    public int maxBullets = 10;
+    public int bulletDamage = 5;//弾の威力
+    public int maxBullets = 10;//弾の最大数
     private int currentBullets;
     public AudioSource shootAudioSource; // 発射効果音用
 
@@ -18,7 +18,7 @@ public class BulletController : MonoBehaviour
 
     void Start()
     {
-        currentBullets = maxBullets;
+        currentBullets = maxBullets;//maxBulletsをcurrentBulletsに入れる
         UpdateAmmoText();
         playerController = FindObjectOfType<PlayerController>(); // PlayerControllerを見つける
     }
@@ -51,7 +51,7 @@ public class BulletController : MonoBehaviour
         }
     }
 
-    public void AddBullets(int amount)
+    public void AddBullets(int amount)//弾の残り弾数を変化させる
     {
         currentBullets += amount;
         if (currentBullets > maxBullets)
@@ -61,7 +61,7 @@ public class BulletController : MonoBehaviour
         UpdateAmmoText();
     }
 
-    void UpdateAmmoText()
+    void UpdateAmmoText()//弾の残り弾数を表示する
     {
         ammoText.text = "× " + currentBullets;
     }

@@ -3,18 +3,19 @@ using UnityEngine.UI;
 
 public class Friend_BuletDamage : MonoBehaviour
 {
-    public Text damageText;
+    public Text damageText;//フレンドの弾の威力を表示するtext
     
 
     void Start()
     {
-        UpdateDamageText();
+        UpdateDamageText();//Textを常時表示
     }
 
     void UpdateDamageText()
     {
         damageText.text = "弾の威力: " + PlayerPrefs.GetFloat("BulletFriendDamage", FriendBullet_Damage.damage).ToString();
-
+        //保存された味方機体の弾を読み込み
+        
     }
 
     void Update()

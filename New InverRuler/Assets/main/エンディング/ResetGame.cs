@@ -9,14 +9,14 @@ using UnityEngine.UI;
 public class ResetGame : MonoBehaviour
 {
    
-    public AudioSource click; // SEを再生するためのAudioSource
-    public Button resetButton;
-    public CoinManager coinManager;
-    public AudioSource Button_Audio;
+    public AudioSource click; // ボタンを押した時に再生するためのAudioSource
+    public Button resetButton;//初期化ボタン
+    public CoinManager coinManager;//CoinManagerを参照
+    public AudioSource Button_Audio;////ボタンの上にマウスポインタが来た時に再生するためのAudioSource
     bool first_Button = false;
     void Start()
     {
-        resetButton.onClick.AddListener(ResetAllScenes);
+        resetButton.onClick.AddListener(ResetAllScenes);//resetButtonを押したらResetAllScenes関数に移動
     }
 
     void ResetAllScenes()
@@ -28,7 +28,7 @@ public class ResetGame : MonoBehaviour
         }
 
 
-        Resett();
+        Resett();//Resett関数に移動
         
         // PlayerPrefsのデータを全て削除
         PlayerPrefs.DeleteAll();
@@ -42,12 +42,13 @@ public class ResetGame : MonoBehaviour
     private IEnumerator ChangeSceneAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Title");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Title");//タイトルに移動
     }
     public void Resett()
     {
         // ボスを倒したことを記録
         PlayerPrefs.SetInt("BossDefeated", 0);
+        //それぞれの数値を初期化する
         CoinManager.coinCount = 0;
         AttckBullet.damage = 5;
         FriendBullet_Damage.damage = 1;

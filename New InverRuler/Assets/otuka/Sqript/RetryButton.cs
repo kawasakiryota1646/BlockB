@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement; //シーンの切り替えに必要
 using UnityEngine.EventSystems; // マウスイベントに必要
 public class RetryButton : MonoBehaviour
 {
-    public PlayerController playerController; // PlayerControllerスクリプトを参照
-    public FriendController friendController;
-    public FriendController2 friendController2;
-    public AudioSource click;
+    public PlayerController playerController;// PlayerControllerを呼び出す
+    public FriendController friendController;// FriendControllerを呼び出す
+    public FriendController2 friendController2;// FriendController2を呼び出す
+    public AudioSource click;//ボタンをクリックした時に再生するAudioSource
     public AudioSource BGM; // SEを再生するためのAudioSource
-    public AudioSource Button_Audio;
+    public AudioSource Button_Audio;//ボタンの上にマウスポインタが来た時に再生するAudioSource
     bool first_Button = false;
     private void Start()
     {
@@ -32,7 +32,7 @@ public class RetryButton : MonoBehaviour
         {
             click.Play();
         }
-        // プレイヤーのライフを初期値に戻す
+        // それぞれのライフを初期値に戻す
         playerController.ResetPlayerHealth();
         friendController.ResetHealth();
         friendController2.ResetHealth2();

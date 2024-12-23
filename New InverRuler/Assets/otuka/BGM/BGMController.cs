@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class BGMController : MonoBehaviour
 {
-    public AudioSource bgmSource;
-    public AudioClip normalBGM;
-    public AudioClip gameOverBGM;
-    public AudioClip bossDeathBGM;
+    public AudioSource bgmSource;//BGMを再生するAudioSource
+    public AudioClip normalBGM;//通常時に鳴らすBGM
+    public AudioClip gameOverBGM;//gameOver(プレイヤーが死亡)した時に鳴らすBGM
     public AudioClip gameClearBGM; // ゲームクリア時のBGM
 
     void Start()

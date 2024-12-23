@@ -50,12 +50,13 @@ public class SceneController : MonoBehaviour
 
     void ResetCurrentScene()
     {
+        //‚»‚ê‚¼‚ê‚ÌHP‚ğŒ³‚É–ß‚·
         friendController.ResetHealth();
         friendController2.ResetHealth2();
         playerController.ResetPlayerHealth();
         
 
-        // ‘¼‚ÌƒŠƒZƒbƒgˆ—‚à‚±‚±‚É’Ç‰Á
+       
     }
 
     private IEnumerator ChangeSceneAfterDelay(float delay)

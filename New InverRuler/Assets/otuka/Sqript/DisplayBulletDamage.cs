@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class DisplayBulletDamage : MonoBehaviour
 {
-    public Text damageText;
+    public Text damageText;//自機(プレイヤー)の弾の威力を表示するテキスト
 
     void Start()
     {
@@ -13,6 +13,7 @@ public class DisplayBulletDamage : MonoBehaviour
     void UpdateDamageText()
     {
         damageText.text = "弾の威力: " + PlayerPrefs.GetFloat("AttckBulletDamage", AttckBullet.damage).ToString();
+        //保存された自機(プレイヤー)の弾を読み込み
     }
 
     void Update()

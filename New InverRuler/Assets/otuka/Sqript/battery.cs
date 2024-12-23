@@ -11,7 +11,7 @@ public class Battery : MonoBehaviour
         if (other.CompareTag("Player"))//プレイヤータグに反応する
         {
             
-            other.GetComponent<BulletController>().AddBullets(ammoAmount);
+            other.GetComponent<BulletController>().AddBullets(ammoAmount);//BulletControllerをコンポーネントして弾を回復させる
             FindObjectOfType<Healitem>().OnAmmoCollected();
             Destroy(gameObject);
         }

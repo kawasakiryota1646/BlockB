@@ -18,6 +18,7 @@ public class Hide : MonoBehaviour
     // Update is called once per frame
     public void Load()
     {
+        //ƒ{ƒ^ƒ“‚ð‰Ÿ‚µ‚½‚ç”ñ•\Ž¦‚É‚·‚é
         image.SetActive(false);
         Button1.SetActive(false);
         text.SetActive(false);
