@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ROSIA_hard_Attack : MonoBehaviour
+public class Russia_hard_Attack : MonoBehaviour
 {
     public GameObject onePrefab; //弾のプレハブ
     public GameObject twoPrefab; //弾のプレハブ
@@ -11,7 +11,7 @@ public class ROSIA_hard_Attack : MonoBehaviour
     public Transform firePoint;     //発射位置のプレハブ
     public float attackCooldown = 1.0f;
     private float lastAttackTime;
-    private ROSIA_hard_HP bossHealth;      //ボスの体力
+    private Russia_hard_HP bossHealth;      //ボスの体力
 
     public float fireRate = 1f;      // 発射間隔
     public float bulletSpeed = 5f;   // 弾の速度
@@ -38,7 +38,7 @@ public class ROSIA_hard_Attack : MonoBehaviour
     void Start()
     {
         lastAttackTime = -attackCooldown; // 最初の攻撃がすぐにできるように設定
-        bossHealth = GetComponentInParent<ROSIA_hard_HP>(); // 親オブジェクトからBossHealthを取得
+        bossHealth = GetComponentInParent<Russia_hard_HP>(); // 親オブジェクトからBossHealthを取得
 
         startPosition = transform.position;
         player = GameObject.FindGameObjectWithTag("Player").transform; // プレイヤーを検索

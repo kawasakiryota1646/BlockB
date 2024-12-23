@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class kuma : MonoBehaviour
+public class hard_bear: MonoBehaviour
 {
     public GameObject bulletPrefab; // ’e‚ÌƒvƒŒƒnƒu
     public float fireRate = 0.1f;   // ’e‚Ì”­ŽËŠÔŠu

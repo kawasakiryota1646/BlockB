@@ -49,7 +49,7 @@ public class AttckBullet : MonoBehaviour
             Destroy(gameObject); // íeÇè¡Ç∑
         }
 
-        ROSIA_hard_HP enemy5 = other.gameObject.GetComponent<ROSIA_hard_HP>();
+        Russia_hard_HP enemy5 = other.gameObject.GetComponent<Russia_hard_HP>();
         if (enemy5 != null)
         {
             enemy5.TakeDamage(damage);

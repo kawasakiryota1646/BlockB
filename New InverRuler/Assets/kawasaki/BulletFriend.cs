@@ -66,7 +66,7 @@ public class BulletFriend : MonoBehaviour
             Destroy(gameObject);
         }
 
-        ROSIA_hard_HP enemy5 = collision.GetComponent<ROSIA_hard_HP>();
+        Russia_hard_HP enemy5 = collision.GetComponent<Russia_hard_HP>();
         if (enemy5 != null)
         {
             // “G‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚é

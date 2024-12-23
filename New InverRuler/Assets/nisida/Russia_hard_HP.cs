@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
-
-public class RHP : MonoBehaviour
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+public class Russia_hard_HP : MonoBehaviour
 {
     public int maxHealth = 100;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     public float flashDuration = 0.1f;
     public GameObject[] deathEffects; // 死亡時のエフェクト（3段階）
-    public GameObject retryButton; // リトライボタン
-    public GameObject nextButton; // 次へボタン
+
     public GameObject gameClearText; // GAMEクリアのテキスト
+    public GameObject NEXTButton;
     public BGMController bgmController; // BGMコントローラー
     public GameObject coinPrefab; // コインのプレハブ
     public int coinCount = 10; // 生成するコインの数
@@ -25,38 +25,41 @@ public class RHP : MonoBehaviour
     public Sprite phase2Sprite;
     public Sprite phase3Sprite;
     public Sprite phase4Sprite;
-
+    public Text ammoText;
     void Start()
     {
+
         currentHealth = maxHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
-
+        UpdateAmmoText();
         // ボタンとテキストを非表示にする
-        retryButton.SetActive(false);
-        nextButton.SetActive(false);
+        NEXTButton.SetActive(false);
         gameClearText.SetActive(false);
     }
 
     void UpdateBossAppearance()
     {
-        if (currentHealth <= 75)
+        UpdateAmmoText();
+        if (currentHealth <= 1500)
         {
             spriteRenderer.sprite = phase2Sprite; // フェーズ2に変更
         }
-        if (currentHealth <= 50)
+        if (currentHealth <= 1000)
         {
             spriteRenderer.sprite = phase3Sprite; // フェーズ3に変更
         }
-        if (currentHealth <= 25)
+        if (currentHealth <= 500)
         {
             spriteRenderer.sprite = phase4Sprite; // フェーズ4に変更
         }
+        UpdateAmmoText();
     }
 
 
     public void TakeDamage(float damage)
     {
+        UpdateAmmoText();
         UpdateBossAppearance();
 
         currentHealth -= damage;
@@ -71,11 +74,15 @@ public class RHP : MonoBehaviour
 
         }
         StartCoroutine(Flash());
+        UpdateAmmoText();
     }
 
     IEnumerator Die()
     {
+        currentHealth = 0;
+        UpdateAmmoText();
         yield return StartCoroutine(HandleExplosion()); // コルーチンを開始
+        Debug.Log("Boss died");
 
         AudioSource audioSource = GetComponent<AudioSource>();
         if (audioSource != null)
@@ -92,12 +99,8 @@ public class RHP : MonoBehaviour
 
         Destroy(gameObject); // 敵を消す
 
-
-
-
         // ボタンとテキストを表示する
-        retryButton.SetActive(true);
-        nextButton.SetActive(true);
+        NEXTButton.SetActive(true);
         gameClearText.SetActive(true);
 
         // ゲームクリアBGMを再生する
@@ -111,10 +114,14 @@ public class RHP : MonoBehaviour
 
         // コインを追加する
         CoinManager.instance.AddCoins(coinsToAdd);
+
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("エンディング"); // 次のシーン名を指定
     }
 
     private IEnumerator Flash()
     {
+        UpdateAmmoText();
         spriteRenderer.color = Color.red; // 点滅色
         yield return new WaitForSeconds(flashDuration);
         spriteRenderer.color = originalColor;
@@ -137,6 +144,7 @@ public class RHP : MonoBehaviour
 
     IEnumerator HandleExplosion()
     {
+        UpdateAmmoText();
         // 3段階のエフェクトを0.2秒ずつ表示
         foreach (GameObject effectPrefab in deathEffects)
         {
@@ -145,5 +153,9 @@ public class RHP : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
     }
-}
 
+    void UpdateAmmoText()
+    {
+        ammoText.text = "残りHP: " + currentHealth;
+    }
+}
