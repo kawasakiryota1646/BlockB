@@ -6,7 +6,7 @@ public class Destroy : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "PlayerBullet")
+        if (collision.gameObject.tag == "PlayerBullet")//ƒvƒŒƒCƒ„[‚Ì’e‚ğÁ‚·
         {
             Destroy(collision.gameObject);
         }
