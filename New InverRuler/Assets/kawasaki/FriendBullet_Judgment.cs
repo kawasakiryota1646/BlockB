@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class friendBULLET : MonoBehaviour
+public class FriendBullet_Judgment : MonoBehaviour
 {
     public static float damage = 0f;  // ’e‚ÌUŒ‚—Í
 
@@ -21,14 +21,14 @@ public class friendBULLET : MonoBehaviour
             enemy1.TakeDamage(damage);
             Destroy(gameObject); // ’e‚ğÁ‚·
         }
-        JapanHP enemy2 = other.gameObject.GetComponent<JapanHP>();
+        Japan_normal_HP enemy2 = other.gameObject.GetComponent<Japan_normal_HP>();
         if (enemy2 != null)
         {
             enemy2.TakeDamage(damage);
             Destroy(gameObject); // ’e‚ğÁ‚·
         }
 
-        HardJapanHP enemy3 = other.gameObject.GetComponent<HardJapanHP>();
+        Japan_Hard_Attack enemy3 = other.gameObject.GetComponent<Japan_Hard_Attack>();
         if (enemy3 != null)
         {
             enemy3.TakeDamage(damage);

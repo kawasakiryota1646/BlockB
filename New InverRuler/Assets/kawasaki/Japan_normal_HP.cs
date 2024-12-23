@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class HardJapanHP : MonoBehaviour
+public class Japan_normal_HP : MonoBehaviour
 {
     public int maxHealth = 100;
     private SpriteRenderer spriteRenderer;
@@ -28,6 +27,7 @@ public class HardJapanHP : MonoBehaviour
     public Text ammoText;
     void Start()
     {
+        
         currentHealth = maxHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
@@ -40,15 +40,16 @@ public class HardJapanHP : MonoBehaviour
 
     void UpdateBossAppearance()
     {
-        if (currentHealth <= 225)
+        UpdateAmmoText();
+        if (currentHealth <= 75)
         {
             spriteRenderer.sprite = phase2Sprite; // フェーズ2に変更
         }
-        if (currentHealth <= 150)
+        if (currentHealth <= 50)
         {
             spriteRenderer.sprite = phase3Sprite; // フェーズ3に変更
         }
-        if (currentHealth <= 75)
+        if (currentHealth <= 25)
         {
             spriteRenderer.sprite = phase4Sprite; // フェーズ4に変更
         }
@@ -58,9 +59,11 @@ public class HardJapanHP : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        
         UpdateBossAppearance();
 
         currentHealth -= damage;
+        UpdateAmmoText();
         // ダメージ効果音を再生
         if (damageAudioSource != null)
         {
@@ -81,7 +84,7 @@ public class HardJapanHP : MonoBehaviour
         UpdateAmmoText();
         yield return StartCoroutine(HandleExplosion()); // コルーチンを開始
         Debug.Log("Boss died");
-
+        
         AudioSource audioSource = GetComponent<AudioSource>();
         if (audioSource != null)
         {
@@ -120,10 +123,11 @@ public class HardJapanHP : MonoBehaviour
 
     private IEnumerator Flash()
     {
-        UpdateAmmoText();
+       
         spriteRenderer.color = Color.red; // 点滅色
         yield return new WaitForSeconds(flashDuration);
         spriteRenderer.color = originalColor;
+        UpdateAmmoText();
     }
 
     void SpawnCoins()
@@ -138,12 +142,11 @@ public class HardJapanHP : MonoBehaviour
     IEnumerator HideCoinAfterDelay(GameObject coin, float delay)
     {
         yield return new WaitForSeconds(delay);
-        coin.SetActive(false); // コインを非表示にする
+        Destroy(coin);
     }
 
     IEnumerator HandleExplosion()
     {
-        UpdateAmmoText();
         // 3段階のエフェクトを0.2秒ずつ表示
         foreach (GameObject effectPrefab in deathEffects)
         {
@@ -151,8 +154,8 @@ public class HardJapanHP : MonoBehaviour
             Destroy(effect, 1.0f); // 1秒後にエフェクトを消去
             yield return new WaitForSeconds(0.2f);
         }
+        UpdateAmmoText();
     }
-
     void UpdateAmmoText()
     {
         ammoText.text = "残りHP: " + currentHealth;

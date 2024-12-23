@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AutoBullet : MonoBehaviour
+public class FriendBullet_FirePoint : MonoBehaviour
 {
     public GameObject bulletPrefab;         // ”­ŽË‚·‚é’e‚ÌƒvƒŒƒnƒu
     public Transform firePoint;             // ’e‚ð”­ŽË‚·‚éˆÊ’u

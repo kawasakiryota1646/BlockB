@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Japan_normal : MonoBehaviour
+public class Japan_normal_Attack : MonoBehaviour
 {
     public GameObject SAKURAPrefab; //弾のプレハブ
     public GameObject HIMAWARIPrefab; //弾のプレハブ
@@ -12,7 +12,7 @@ public class Japan_normal : MonoBehaviour
     public float bulletSpeed = 5f;
     public float attackCooldown = 1.0f;
     private float lastAttackTime;
-    private JapanHP bossHealth;      //ボスの体力
+    private Japan_normal_HP bossHealth;      //ボスの体力
     public float randomSpeed = 5f;  // 弾の速度
     public int   randomCount = 10;    // 発射する弾の数
 
@@ -26,7 +26,7 @@ public class Japan_normal : MonoBehaviour
     void Start()
     {
         lastAttackTime = -attackCooldown; // 最初の攻撃がすぐにできるように設定
-        bossHealth = GetComponentInParent<JapanHP>(); // 親オブジェクトからBossHealthを取得
+        bossHealth = GetComponentInParent<Japan_normal_HP>(); // 親オブジェクトからBossHealthを取得
 
     }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class USAboss : MonoBehaviour
+public class USA_normal_Attack : MonoBehaviour
 {
     public GameObject UKIPrefab; //弾のプレハブ
     public GameObject POTATOPrefab; //弾のプレハブ

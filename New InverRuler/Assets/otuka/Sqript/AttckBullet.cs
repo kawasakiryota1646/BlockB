@@ -28,14 +28,14 @@ public class AttckBullet : MonoBehaviour
             Destroy(gameObject); // íeÇè¡Ç∑
         }
 
-        JapanHP enemy2 = other.gameObject.GetComponent<JapanHP>();
+        Japan_normal_HP enemy2 = other.gameObject.GetComponent<Japan_normal_HP>();
         if (enemy2 != null)
         {
             enemy2.TakeDamage(damage);
             Destroy(gameObject); // íeÇè¡Ç∑
         }
 
-        HardJapanHP enemy3 = other.gameObject.GetComponent<HardJapanHP>();
+        Japan_Hard_Attack enemy3 = other.gameObject.GetComponent<Japan_Hard_Attack>();
         if (enemy3 != null)
         {
             enemy3.TakeDamage(damage);

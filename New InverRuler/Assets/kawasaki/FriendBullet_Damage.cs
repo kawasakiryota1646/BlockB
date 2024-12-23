@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletFriend : MonoBehaviour
+public class FriendBullet_Damage : MonoBehaviour
 {
     public float speed = 20f;     // ’e‚Ì‘¬“x
     public float lifeTime = 2f;   // ’e‚Ìõ–½
@@ -40,7 +40,7 @@ public class BulletFriend : MonoBehaviour
             Destroy(gameObject);
         }
 
-        JapanHP enemy2 = collision.GetComponent<JapanHP>();
+        Japan_normal_HP enemy2 = collision.GetComponent<Japan_normal_HP>();
         if (enemy2 != null)
         {
             // “G‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚é
@@ -48,7 +48,7 @@ public class BulletFriend : MonoBehaviour
             // ’e‚ğ”j‰ó‚·‚é
             Destroy(gameObject);
         }
-        HardJapanHP enemy3 = collision.GetComponent<HardJapanHP>();
+        Japan_Hard_Attack enemy3 = collision.GetComponent<Japan_Hard_Attack>();
         if (enemy3 != null)
         {
             // “G‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚é

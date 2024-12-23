@@ -1806,6 +1806,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: friendly
       objectReference: {fileID: 0}
+    - target: {fileID: 2183988180045808093, guid: acecde0d711771b40a71d565079fe852, type: 3}
+      propertyPath: fireRate
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2183988180045808095, guid: acecde0d711771b40a71d565079fe852, type: 3}
       propertyPath: m_RootOrder
       value: 0

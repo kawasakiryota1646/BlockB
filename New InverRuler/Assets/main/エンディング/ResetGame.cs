@@ -50,7 +50,7 @@ public class ResetGame : MonoBehaviour
         PlayerPrefs.SetInt("BossDefeated", 0);
         CoinManager.coinCount = 0;
         AttckBullet.damage = 5;
-        BulletFriend.damage = 1;
+        FriendBullet_Damage.damage = 1;
         FriendController.hp1 = 1;
         FriendController2.hp2 = 1;
         
