@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 2183988180045808094}
   - component: {fileID: 2183988180045808093}
   - component: {fileID: 2183988180045808090}
-  - component: {fileID: 2183988180045808089}
-  - component: {fileID: 4066101971310992278}
   - component: {fileID: 1942849195780692324}
   - component: {fileID: 1734108817}
   - component: {fileID: 1734108818}
   - component: {fileID: 1129553882}
+  - component: {fileID: 2439768360854309504}
+  - component: {fileID: 8360514047648146266}
   m_Layer: 0
   m_Name: friendly
   m_TagString: friend
@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 2183988180045808088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.5676, y: -3.7907, z: 0}
-  m_LocalScale: {x: 2.235017, y: 1.8245449, z: 2.8747036}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 8.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -129,47 +129,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &2183988180045808089
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2183988180045808088}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
-  m_EdgeRadius: 0
---- !u!114 &4066101971310992278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2183988180045808088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f0413dc9c2a39045ba2aa88d7c7a482, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathEffects:
-  - {fileID: 8839678283891761853, guid: f8158ad1be0e18b42a529080e724b733, type: 3}
-  explosionAudioSource: {fileID: 0}
 --- !u!114 &1942849195780692324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRadius: 1.5
-  avoidSpeed: 2
+  avoidSpeed: 2.5
   returnSpeed: 1
 --- !u!114 &1734108818
 MonoBehaviour:
@@ -309,3 +268,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!58 &2439768360854309504
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2183988180045808088}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0007216297, y: -0.0009444839}
+  serializedVersion: 2
+  m_Radius: 0.096483774
+--- !u!114 &8360514047648146266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2183988180045808088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0413dc9c2a39045ba2aa88d7c7a482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  friend: {fileID: 0}
+  hp1: 1
+  effectPrefab: {fileID: 0}
+  explosionAudioSource: {fileID: 0}

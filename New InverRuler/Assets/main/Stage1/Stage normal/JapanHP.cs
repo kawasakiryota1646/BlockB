@@ -142,7 +142,7 @@ public class JapanHP : MonoBehaviour
     IEnumerator HideCoinAfterDelay(GameObject coin, float delay)
     {
         yield return new WaitForSeconds(delay);
-        coin.SetActive(false); // ƒRƒCƒ“‚ð”ñ•\Ž¦‚É‚·‚é
+        Destroy(coin);
     }
 
     IEnumerator HandleExplosion()

@@ -115,11 +115,10 @@ public class PlayerController : MonoBehaviour
     {
         while (true)
         {
-            
+            yield return new WaitForSeconds(8f); // 5•b‘Ò‚Â
 
             if (hp < 3)
             {
-                yield return new WaitForSeconds(5f); // 5•b‘Ò‚Â
                 float randomX = Random.Range(cameraTransform.position.x - spawnRangeX, cameraTransform.position.x + spawnRangeX);
                 float spawnY = cameraTransform.position.y + spawnHeight;
                 Vector3 spawnPosition = new Vector3(randomX, spawnY, 0);
@@ -191,7 +190,7 @@ public class PlayerController : MonoBehaviour
         gameStartText.SetActive(true); // ƒeƒLƒXƒg‚ð•\Ž¦
         Time.timeScale = 0f; // ƒQ[ƒ€‚ð’âŽ~
         PlayerController.gameState = "paused"; // ƒQ[ƒ€‚ð’âŽ~ó‘Ô‚ÉÝ’è
-        yield return new WaitForSecondsRealtime(3f); // 3•b‘Ò‚Â
+        yield return new WaitForSecondsRealtime(3f);
         gameStartText.SetActive(false); // ƒeƒLƒXƒg‚ð”ñ•\Ž¦
         Time.timeScale = 1f; // ƒQ[ƒ€‚ðÄŠJ
         PlayerController.gameState = "playing"; // ƒQ[ƒ€‚ðƒvƒŒƒCó‘Ô‚ÉÝ’è

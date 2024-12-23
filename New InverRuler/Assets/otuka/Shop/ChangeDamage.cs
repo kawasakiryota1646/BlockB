@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class ChangeDamage : MonoBehaviour
 {
-    
     public Button changeDamageButton;
     public AudioSource CoinAudioSource; // ダメージ効果音用
     public Text insufficientCoinsText; // コイン不足メッセージ用
@@ -11,10 +10,13 @@ public class ChangeDamage : MonoBehaviour
     public Text costText; // 値段表示用のTextコンポーネント
     private int purchaseCount; // 購入回数を管理する変数
     private int baseCost = 20; // 基本のコイン消費量
+    public AudioSource Button_Audio;
+    bool first_Button = false;
 
     void Start()
     {
         purchaseCount = PlayerPrefs.GetInt("ChangeDamagePurchaseCount", 0); // 保存された購入回数を読み込む
+        AttckBullet.damage = PlayerPrefs.GetFloat("AttckBulletDamage", 5f); // 保存された弾の威力を読み込む
         changeDamageButton.onClick.AddListener(ChangeBulletDamage);
         insufficientCoinsText.gameObject.SetActive(false); // 初期状態では非表示
         insufficientCoinsObject.SetActive(false); // 初期状態では非表示
@@ -63,5 +65,19 @@ public class ChangeDamage : MonoBehaviour
     {
         int currentCost = baseCost + (purchaseCount * 5); // 現在のコイン消費量を計算
         costText.text = "枚数は " + currentCost.ToString() + ""; // 値段を表示
+    }
+
+    public void OnPointerEnter()
+    {
+        if (first_Button == false)
+        {
+            Button_Audio.Play();
+            first_Button = true;
+        }
+    }
+
+    public void OnMouseExit()
+    {
+        first_Button = false;
     }
 }

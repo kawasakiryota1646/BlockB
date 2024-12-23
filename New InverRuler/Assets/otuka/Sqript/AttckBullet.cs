@@ -6,11 +6,8 @@ public class AttckBullet : MonoBehaviour
 {
     public static float damage = 5f;  // ’e‚ÌUŒ‚—Í
 
-
     void Awake()
     {
-        damage = 5;
-        // •Û‘¶‚³‚ê‚½’e‚ÌˆĞ—Í‚ğ“Ç‚İ‚Ş
         damage = PlayerPrefs.GetFloat("AttckBulletDamage", 5f);
     }
 

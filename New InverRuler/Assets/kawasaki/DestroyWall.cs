@@ -11,15 +11,7 @@ public class DestroyWall : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        if (collision.gameObject.tag == "PlayerBullet")
-        {
-            Destroy(collision.gameObject);
-        }
-
-        if (collision.gameObject.tag == "FriendBullet")
-        {
-            Destroy(collision.gameObject);
-        }
+        
 
         if (collision.gameObject.tag == "Heart")
         {

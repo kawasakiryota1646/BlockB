@@ -4,54 +4,95 @@ using UnityEngine;
 
 public class FriendController : MonoBehaviour
 {
-    public GameObject[] deathEffects; // 死亡時のエフェクト（3段階）
+    public GameObject friend;
+    public static int hp1 = 1; // 味方のHP
+    public GameObject effectPrefab; // 死亡時のエフェクト（3段階）
     public AudioSource explosionAudioSource; // 爆発効果音用
+    bool inDamage = true; // ダメージ中フラグ
+    Bulletstrengthening bulletstrengthening;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
+       
+        hp1 = PlayerPrefs.GetInt("Number of Lives", 1);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (hp1 == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "friend")
         {
             // 衝突を無効にする処理
             Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
         }
-        if (other.gameObject.tag == "friend")
-        {
-            // 衝突を無効にする処理
-            Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
-        }
-        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet"))
+        else if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet"))
         {
             AudioSource audioSource = GetComponent<AudioSource>();
             if (audioSource != null)
             {
                 audioSource.Play();
             }
-            StartCoroutine(HandleExplosion()); // コルーチンを開始
-            Destroy(gameObject); // 味方機体を消滅させる
+            GetDamage();
+           
         }
     }
 
-    IEnumerator HandleExplosion()
+    void GetDamage()
     {
-        // 3段階のエフェクトを0.2秒ずつ表示
-        foreach (GameObject effectPrefab in deathEffects)
+        if (inDamage)
         {
-            GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
-            Destroy(effect, 1.0f); // 0.5秒後にエフェクトを消去
-            yield return new WaitForSeconds(0.2f);
+            if (inDamage == true)
+            {
+                hp1--;
+            }
+            
+            if (hp1 > 0)
+            {
+                inDamage = false;
+                Invoke("DamageEnd", 0.5f); // 0.5秒後に無敵状態を終了
+                
+            }
+            else
+            {
+                Destroy(friend, 0.1f); // プレイヤーを消す
+            }
         }
     }
+
+    void DamageEnd()
+    {
+        inDamage = true;
+        Debug.Log("true");
+    }
+
+    void Destroy(GameObject hp)
+    {
+        // 爆発効果音を再生
+        if (explosionAudioSource != null)
+        {
+            explosionAudioSource.Play();
+        }
+
+        GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
+        Destroy(effect, 0.1f); // 0.5秒後にエフェクトを消去
+
+        
+    }
+
+    public void ResetHealth()
+    {
+        hp1 = PlayerPrefs.GetInt("Number of Lives", 1); // 保存された弾の威力を読み込む
+    }
+
+
 }
 
 
