@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Battery : MonoBehaviour
+public class battery : MonoBehaviour
 {
     public int ammoAmount = 5;//’e‚Ì‰ñ•œ”
  
