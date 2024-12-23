@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TEKIAttack : MonoBehaviour
+public class Japan_normal : MonoBehaviour
 {
     public GameObject SAKURAPrefab; //弾のプレハブ
     public GameObject HIMAWARIPrefab; //弾のプレハブ

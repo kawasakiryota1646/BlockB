@@ -9,7 +9,7 @@ public class friendBULLET : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         // “G‚É“–‚½‚Á‚½‚Æ‚«‚Ìˆ—
-        TEKIHP enemy = other.gameObject.GetComponent<TEKIHP>();
+        USA_normal_HP enemy = other.gameObject.GetComponent<USA_normal_HP>();
         if (enemy != null)
         {
             enemy.TakeDamage(damage);

@@ -22,7 +22,7 @@ public class BulletFriend : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         // 敵に当たったかどうかをチェック
-        TEKIHP enemy = collision.GetComponent<TEKIHP>();
+        USA_normal_HP enemy = collision.GetComponent<USA_normal_HP>();
         if (enemy != null)
         {
             // 敵にダメージを与える

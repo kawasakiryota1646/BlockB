@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class TEKIHP : MonoBehaviour
+public class USA_normal_HP : MonoBehaviour
 {
     public int maxHealth = 100;
     private SpriteRenderer spriteRenderer;

@@ -14,7 +14,7 @@ public class USAboss : MonoBehaviour
     public float fireInterval = 5f; // 発射間隔
 
     private float lastAttackTime;
-    private TEKIHP bossHealth;      //ボスの体力
+    private USA_normal_HP bossHealth;      //ボスの体力
 
 
     public float POTATOSpeed = 5f;
@@ -36,7 +36,7 @@ public class USAboss : MonoBehaviour
     void Start()
     {
         lastAttackTime = -attackCooldown; // 最初の攻撃がすぐにできるように設定
-        bossHealth = GetComponentInParent<TEKIHP>(); // 親オブジェクトからBossHealthを取得
+        bossHealth = GetComponentInParent<USA_normal_HP>(); // 親オブジェクトからBossHealthを取得
 
     }
 
