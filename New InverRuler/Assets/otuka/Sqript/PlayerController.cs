@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
         axisH = Input.GetAxisRaw("Horizontal"); //左右キー入力
         axisV = Input.GetAxisRaw("Vertical"); //上下キー入力
 
+        //hpが０ならGameOver関数に飛ぶ
         if (hp == 0)
         {
             StartCoroutine(GameOver());
@@ -67,23 +68,24 @@ public class PlayerController : MonoBehaviour
     //接触
     void OnCollisionEnter2D(Collision2D collision)
     {
+        //Enemyタグ　EnemyBulletタグの接触を感知
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet")
         {
-            GetDamage();
+            GetDamage();//GetDamage関数に移動
         }
     }
 
     //ダメージ
     void GetDamage()
     {
-        if (gameState == "playing")
+        if (gameState == "playing")//gameStateがplayingなら中の処理を実行
         {
-            if (inDamage == true)
+            if (inDamage == true)//trueならhpを-1　falseならhpは変動しない
             {
                 hp--;
             }
 
-            if (hp > 0)
+            if (hp > 0)//hpが0以上なら中の処理を実行
             {
                 // ダメージ効果音を再生
                 if (damageAudioSource != null)
@@ -133,6 +135,7 @@ public class PlayerController : MonoBehaviour
         gameState = "gameover";
         // プレイヤーの操作を無効にする
         GetComponent<PlayerController>().enabled = false;
+        //Heartタグの付いているオブジェクトを全て削除
         GameObject[] healthPickups = GameObject.FindGameObjectsWithTag("Heart");
         foreach (GameObject pickup in healthPickups)
         {

@@ -8,8 +8,8 @@ public class ButtonManager : MonoBehaviour
     public AudioSource click;
     public Button buttonToShow1; // 表示する最初のボタン
     public Button buttonToShow2; // 表示する2つ目のボタン
-    public GameObject image;
-    public Text text;
+    public GameObject image;//表示するimageオブジェクト
+    public Text text;//表示するテキスト
     public Button triggerButton; // 表示をトリガーするボタン
     private bool buttonsVisible = false; // ボタンの表示状態を追跡するフラグ
     public AudioSource Button_Audio;

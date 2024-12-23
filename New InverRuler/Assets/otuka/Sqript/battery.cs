@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class battery : MonoBehaviour
 {
-    public int ammoAmount = 5;
+    public int ammoAmount = 5;//弾の回復数
  
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player"))//プレイヤータグに反応する
         {
             
             other.GetComponent<BulletController>().AddBullets(ammoAmount);

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Healitem : MonoBehaviour
 {
-    public GameObject ammoPrefab;
-    public float spawnInterval = 10f;
-    private bool isSpawning = false;
+    public GameObject ammoPrefab;//回復アイテムのプレハブ
+    public float spawnInterval = 10f;//回復アイテムの出現間隔
+    private bool isSpawning = false;//回復アイテムが出現する条件
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class Healitem : MonoBehaviour
 
     void TrySpawnAmmo()
     {
-        Instantiate(ammoPrefab, GetRandomPosition(), Quaternion.identity);
+        Instantiate(ammoPrefab, GetRandomPosition(), Quaternion.identity);//回復アイテム作成、出現
     }
 
     Vector3 GetRandomPosition()
