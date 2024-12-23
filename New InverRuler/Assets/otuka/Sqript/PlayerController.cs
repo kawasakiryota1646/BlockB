@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(8f); // 5•b‘Ò‚Â
+            yield return new WaitForSeconds(10f); // 5•b‘Ò‚Â
 
             if (hp < 3)
             {
