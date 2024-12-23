@@ -7,12 +7,12 @@ using UnityEngine.EventSystems; // マウスイベントに必要
 public class SceneController : MonoBehaviour
 {
     public string sceneName; //読み込むシーン名
-    public PlayerController playerController;
-    public FriendController friendController;
-    public FriendController2 friendController2;
-    public AudioSource BGM; // SEを再生するためのAudioSource
-    public AudioSource click;
-    public AudioSource Button_Audio;
+    public PlayerController playerController;// PlayerControllerを呼び出す
+    public FriendController friendController;// FriendControllerを呼び出す
+    public FriendController2 friendController2;// FriendController2を呼び出す
+    public AudioSource BGM; // SEを再生するAudioSource
+    public AudioSource click;//ボタンを押したときに再生するAudioSource
+    public AudioSource Button_Audio;//マウスが上に乗った時に再生するAudioSource
     bool first_Button = false;
     private void Start()
     {

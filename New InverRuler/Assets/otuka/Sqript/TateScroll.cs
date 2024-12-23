@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TateScroll : MonoBehaviour
 {
-    private float speed = 1;
+    private float speed = 1;//”wŒi‚ªˆÚ“®‚·‚é‘¬“x
 
     void Update()
     {
