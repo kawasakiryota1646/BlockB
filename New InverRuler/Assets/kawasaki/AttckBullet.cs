@@ -35,7 +35,7 @@ public class AttckBullet : MonoBehaviour
             Destroy(gameObject); // ’e‚ğÁ‚·
         }
 
-        Japan_Hard_Attack enemy3 = other.gameObject.GetComponent<Japan_Hard_Attack>();
+        Japan_Hard_HP enemy3 = other.gameObject.GetComponent<Japan_Hard_HP>();
         if (enemy3 != null)
         {
             enemy3.TakeDamage(damage);

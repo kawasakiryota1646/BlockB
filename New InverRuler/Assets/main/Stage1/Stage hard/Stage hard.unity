@@ -212,17 +212,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &185639829 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 101054720705756662, guid: bf40e88142349554baed84d86dfff278, type: 3}
-  m_PrefabInstance: {fileID: 444979237}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &217483445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7023106448697899991, guid: 1c9b6e3f4fb47d7449de09aff7cf8b33, type: 3}
@@ -465,20 +454,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f06b136774343b438662dabf18bed68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 300
+  maxHealth: 75
   flashDuration: 0.1
   deathEffects:
   - {fileID: 6369508233973101628, guid: c29b9abfaf2eebb4b9736fd016fca165, type: 3}
   - {fileID: 249110656335039890, guid: 0e095b05d310b1b4199896cc70aafd71, type: 3}
   - {fileID: 8486911459558470706, guid: a9e8cd16f5146a646ba0f22c5cfcb8a0, type: 3}
   - {fileID: 205398590896992992, guid: 851a771a406db274e9d5a38a2ebe072c, type: 3}
-  retryButton: {fileID: 1006755240}
-  nextButton: {fileID: 444979239}
-  gameClearText: {fileID: 444979240}
+  retryButton: {fileID: 444979239}
+  nextButton: {fileID: 444979240}
+  gameClearText: {fileID: 444979241}
   bgmController: {fileID: 1995705243}
   coinPrefab: {fileID: 2366648631505798212, guid: 75f6d05c42fa51e409fe6e0ad76fc3a4, type: 3}
-  coinCount: 1
-  coinsToAdd: 50
+  coinCount: 50
+  coinsToAdd: 10
   damageAudioSource: {fileID: 337164726}
   explosionAudioSource: {fileID: 337164732}
   currentHealth: 0
@@ -487,7 +476,7 @@ MonoBehaviour:
   phase2Sprite: {fileID: 21300000, guid: b55d718d27edddc4ca27bdbeefbb8bcc, type: 3}
   phase3Sprite: {fileID: 21300000, guid: 519283695836452419f8950f7d5c138c, type: 3}
   phase4Sprite: {fileID: 21300000, guid: a67ed06f8270f254796237e3c79bf720, type: 3}
-  ammoText: {fileID: 185639829}
+  ammoText: {fileID: 444979238}
 --- !u!1 &337867311 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5628597861727087577, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
@@ -967,12 +956,28 @@ PrefabInstance:
       objectReference: {fileID: 40369611}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf40e88142349554baed84d86dfff278, type: 3}
+--- !u!114 &444979238 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 101054720705756662, guid: bf40e88142349554baed84d86dfff278, type: 3}
+  m_PrefabInstance: {fileID: 444979237}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &444979239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5575509466838723789, guid: bf40e88142349554baed84d86dfff278, type: 3}
+  m_PrefabInstance: {fileID: 444979237}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &444979240 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5575509465995980831, guid: bf40e88142349554baed84d86dfff278, type: 3}
   m_PrefabInstance: {fileID: 444979237}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &444979240 stripped
+--- !u!1 &444979241 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5575509465289933201, guid: bf40e88142349554baed84d86dfff278, type: 3}
   m_PrefabInstance: {fileID: 444979237}
@@ -1164,11 +1169,6 @@ PrefabInstance:
 --- !u!1 &962609355 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5575509466850820804, guid: bf40e88142349554baed84d86dfff278, type: 3}
-  m_PrefabInstance: {fileID: 444979237}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1006755240 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5575509466838723789, guid: bf40e88142349554baed84d86dfff278, type: 3}
   m_PrefabInstance: {fileID: 444979237}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1096409514
@@ -1873,17 +1873,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c7642c4544795a4dacca9e153334ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SAKURAPrefab: {fileID: 1447662181806142486, guid: e4f6dd588117c4d44a936abc36ee99aa, type: 3}
-  HIMAWARIPrefab: {fileID: 5767640577875138886, guid: 5edbc32fc1edbb3479cb80ce12853c44, type: 3}
-  MOMIZIPrefab: {fileID: 7522598048851565201, guid: ff21706dac0a5e443bf3735611e17787, type: 3}
-  SNOWPrefab: {fileID: 1546470821284441854, guid: cbade562a821516489bb07ac4f6ad605, type: 3}
+  SakuraPrefab: {fileID: 1447662181806142486, guid: e4f6dd588117c4d44a936abc36ee99aa, type: 3}
+  SunflowerPrefab: {fileID: 5767640577875138886, guid: 5edbc32fc1edbb3479cb80ce12853c44, type: 3}
+  FallfoliagePrefab: {fileID: 7522598048851565201, guid: ff21706dac0a5e443bf3735611e17787, type: 3}
+  SnowflakesPrefab: {fileID: 1546470821284441854, guid: cbade562a821516489bb07ac4f6ad605, type: 3}
   firePoint: {fileID: 1737247188}
   bulletSpeed: 5
   attackCooldown: 1
+  Sunflower_bulletCount: 4
+  spreadAngle: 50
   randomSpeed: 5
-  randomCount: 10
+  randomCount: 8
+  Snowflakes_bulletCount: 8
   rotationSpeed: 50
-  bulletCount: 20
   positionOffset: 1
 --- !u!4 &1803740316 stripped
 Transform:
@@ -1923,7 +1925,6 @@ MonoBehaviour:
   bgmSource: {fileID: 1995705244}
   normalBGM: {fileID: 8300000, guid: 0c3d392ccfc7b8d4aa6267e2f1d9c4b3, type: 3}
   gameOverBGM: {fileID: 8300000, guid: eb9a851c80f6e984ca2c88dc4ad653dd, type: 3}
-  bossDeathBGM: {fileID: 0}
   gameClearBGM: {fileID: 8300000, guid: b6be149c225a2a44eae394a6c2b79710, type: 3}
 --- !u!82 &1995705244
 AudioSource:

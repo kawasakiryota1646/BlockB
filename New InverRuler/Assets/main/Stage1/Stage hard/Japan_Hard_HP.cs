@@ -1,153 +1,161 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Japan_Hard_HP : MonoBehaviour
 {
-    public GameObject SAKURAPrefab; //弾のプレハブ
-    public GameObject HIMAWARIPrefab; //弾のプレハブ
-    public GameObject MOMIZIPrefab; //弾のプレハブ
-    public GameObject SNOWPrefab; //弾のプレハブ
-    public Transform firePoint;     //発射位置のプレハブ
-    public float bulletSpeed = 5f;
-    public float attackCooldown = 1.0f;
-    private float lastAttackTime;
-    private Japan_Hard_Attack bossHealth;      //ボスの体力
-    public float randomSpeed = 5f;  // 弾の速度
-    public int randomCount = 10;    // 発射する弾の数
-
-
-
-
-    public float rotationSpeed = 50f; // 螺旋の回転速度
-    public int bulletCount = 20;      // 発射する弾の数
-    public float positionOffset = 1f; // 発射位置のずらし幅
-
+    public int maxHealth = 100;
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
+    public float flashDuration = 0.1f;
+    public GameObject[] deathEffects; // 死亡時のエフェクト（3段階）
+    public GameObject retryButton; // リトライボタン
+    public GameObject nextButton; // 次へボタン
+    public GameObject gameClearText; // GAMEクリアのテキスト
+    public BGMController bgmController; // BGMコントローラー
+    public GameObject coinPrefab; // コインのプレハブ
+    public int coinCount = 10; // 生成するコインの数
+    public int coinsToAdd = 10; // 追加するコインの数
+    public AudioSource damageAudioSource; // ダメージ効果音用
+    public AudioSource explosionAudioSource; // 爆発効果音用
+    public float currentHealth;
+    public SpriteRenderer spriteRenderer2;
+    public Sprite phase1Sprite;
+    public Sprite phase2Sprite;
+    public Sprite phase3Sprite;
+    public Sprite phase4Sprite;
+    public Text ammoText;
     void Start()
     {
-        lastAttackTime = -attackCooldown; // 最初の攻撃がすぐにできるように設定
-        bossHealth = GetComponentInParent<Japan_Hard_Attack>(); // 親オブジェクトからBossHealthを取得
-
+        currentHealth = maxHealth;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
+        UpdateAmmoText();
+        // ボタンとテキストを非表示にする
+        retryButton.SetActive(false);
+        nextButton.SetActive(false);
+        gameClearText.SetActive(false);
     }
 
-    void Update()
+    void UpdateBossAppearance()
     {
-        if (Time.time >= lastAttackTime + attackCooldown)
+        if (currentHealth <= 225)
         {
-            if (bossHealth != null)
-            {
-                if (bossHealth.currentHealth > 225)
-                {
-                    AttackPattern1();
-                }
-                else if (bossHealth.currentHealth > 150)
-                {
-                    AttackPattern2();
-                }
-                else if (bossHealth.currentHealth > 75)
-                {
-                    AttackPattern3();
-                }
-                else
-                {
-                    AttackPattern4();
-                }
-                lastAttackTime = Time.time; // 最後の攻撃時間を更新
-            }
+            spriteRenderer.sprite = phase2Sprite; // フェーズ2に変更
         }
-    }
-    void AttackPattern1()
-    {
-        Fire();
-    }
-
-    void Fire()
-    {
-        GameObject bullet = Instantiate(SAKURAPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.velocity = Vector2.down * bulletSpeed; // 下方向に発射
-    }
-
-    void AttackPattern2()//ランダム
-    {
-        int bulletCount = 4; // 弾の数
-        float spreadAngle = 50f; // 扇状の角度
-
-        for (int i = 0; i < bulletCount; i++)
+        if (currentHealth <= 150)
         {
-            // 弾の角度を計算
-            float angle = -spreadAngle / 2 + spreadAngle / (bulletCount - 1) * i;
+            spriteRenderer.sprite = phase3Sprite; // フェーズ3に変更
+        }
+        if (currentHealth <= 75)
+        {
+            spriteRenderer.sprite = phase4Sprite; // フェーズ4に変更
+        }
+        UpdateAmmoText();
+    }
 
-            // 発射方向を計算
-            Vector2 direction = Quaternion.Euler(0, 0, angle) * Vector2.down;
 
-            // 弾を生成
-            GameObject bullet = Instantiate(HIMAWARIPrefab, firePoint.position, Quaternion.identity);
+    public void TakeDamage(float damage)
+    {
+        UpdateBossAppearance();
 
-            // Rigidbody2Dで速度を与える
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.velocity = direction * bulletSpeed;
-            }
+        currentHealth -= damage;
+        // ダメージ効果音を再生
+        if (damageAudioSource != null)
+        {
+            damageAudioSource.Play();
+        }
+        if (currentHealth <= 0)
+        {
+            StartCoroutine(Die());
+
+        }
+        StartCoroutine(Flash());
+        UpdateAmmoText();
+    }
+
+    IEnumerator Die()
+    {
+        currentHealth = 0;
+        UpdateAmmoText();
+        yield return StartCoroutine(HandleExplosion()); // コルーチンを開始
+        Debug.Log("Boss died");
+
+        AudioSource audioSource = GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.Play();
         }
 
-    }
-
-    void AttackPattern3()
-    {
-        for (int i = 0; i < randomCount; i++)
+        // シーン内のすべての "EnemyBullet" タグが付いたオブジェクトを消滅させる
+        GameObject[] enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
+        foreach (GameObject bullet in enemyBullets)
         {
-            // ランダムな角度を生成 (0度から360度)
-            float randomAngle = Random.Range(90f, 270f);
-
-            // 弾を生成
-            GameObject bullet = Instantiate(MOMIZIPrefab, transform.position, Quaternion.identity);
-
-            // 発射方向を設定
-            Vector3 direction = Quaternion.Euler(0, 0, randomAngle) * Vector3.up;
-
-            // Rigidbody2D を使用して弾を発射
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.velocity = direction * randomSpeed;
-            }
+            Destroy(bullet);
         }
 
+        Destroy(gameObject); // 敵を消す
 
-    }
 
-    void AttackPattern4()
-    {
-        FireSpiral();
-    }
 
-    void FireSpiral()
-    {
-        for (int i = 0; i < bulletCount; i++)
+
+        // ボタンとテキストを表示する
+        retryButton.SetActive(true);
+        nextButton.SetActive(true);
+        gameClearText.SetActive(true);
+
+        // ゲームクリアBGMを再生する
+        if (bgmController != null)
         {
-            // 発射する角度を計算（一定の間隔で角度を増加させる）
-            float angle = i * (360f / bulletCount) + rotationSpeed * i * Time.deltaTime;
-
-            // 発射位置を左右にずらす（sinで位置を上下に動かす）
-            float offsetX = Mathf.Sin(Time.time * 2f) * positionOffset; // 位置を左右に動かす
-
-            // ずらした発射位置を設定
-            Vector2 adjustedFirePosition = new Vector2(firePoint.position.x + offsetX, firePoint.position.y);
-
-            // 方向を計算
-            Vector2 direction = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle));
-
-            // 弾を発射
-            GameObject bullet = Instantiate(SNOWPrefab, adjustedFirePosition, Quaternion.identity);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-
-            if (rb != null)
-            {
-                rb.velocity = direction * bulletSpeed; // 計算した方向に弾を飛ばす
-            }
+            bgmController.PlayGameClearBGM();
         }
+
+        // コインを生成する
+        SpawnCoins();
+
+        // コインを追加する
+        CoinManager.instance.AddCoins(coinsToAdd);
+    }
+
+    private IEnumerator Flash()
+    {
+        UpdateAmmoText();
+        spriteRenderer.color = Color.red; // 点滅色
+        yield return new WaitForSeconds(flashDuration);
+        spriteRenderer.color = originalColor;
+    }
+
+    void SpawnCoins()
+    {
+        for (int i = 0; i < coinCount; i++)
+        {
+            GameObject coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
+            StartCoroutine(HideCoinAfterDelay(coin, 2f)); // 2秒後にコインを非表示にする
+        }
+    }
+
+    IEnumerator HideCoinAfterDelay(GameObject coin, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        coin.SetActive(false); // コインを非表示にする
+    }
+
+    IEnumerator HandleExplosion()
+    {
+        UpdateAmmoText();
+        // 3段階のエフェクトを0.2秒ずつ表示
+        foreach (GameObject effectPrefab in deathEffects)
+        {
+            GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
+            Destroy(effect, 1.0f); // 1秒後にエフェクトを消去
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
+
+    void UpdateAmmoText()
+    {
+        ammoText.text = "残りHP: " + currentHealth;
     }
 
 }

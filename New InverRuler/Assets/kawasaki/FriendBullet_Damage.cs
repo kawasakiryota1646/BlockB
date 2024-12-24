@@ -48,7 +48,7 @@ public class FriendBullet_Damage : MonoBehaviour
             // ’e‚ğ”j‰ó‚·‚é
             Destroy(gameObject);
         }
-        Japan_Hard_Attack enemy3 = collision.GetComponent<Japan_Hard_Attack>();
+        Japan_Hard_HP enemy3 = collision.GetComponent<Japan_Hard_HP>();
         if (enemy3 != null)
         {
             // “G‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚é

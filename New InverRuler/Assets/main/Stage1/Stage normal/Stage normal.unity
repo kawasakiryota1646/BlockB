@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6cd7df333e37c4eaa8935596ccfbcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 30
   flashDuration: 0.1
   deathEffects:
   - {fileID: 6369508233973101628, guid: c29b9abfaf2eebb4b9736fd016fca165, type: 3}
@@ -803,9 +803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dea5a7e1f832494e968e44313db4eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownPrefabs: []
-  countdownParent: {fileID: 0}
-  gameStartText: {fileID: 0}
 --- !u!1 &444824169 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5575509465842137936, guid: bf40e88142349554baed84d86dfff278, type: 3}
@@ -1661,10 +1658,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590b2336683ef434f9eec3ea9b6752c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SAKURAPrefab: {fileID: 1447662181806142486, guid: e4f6dd588117c4d44a936abc36ee99aa, type: 3}
-  HIMAWARIPrefab: {fileID: 5767640577875138886, guid: 5edbc32fc1edbb3479cb80ce12853c44, type: 3}
-  MOMIZIPrefab: {fileID: 7522598048851565201, guid: ff21706dac0a5e443bf3735611e17787, type: 3}
-  SNOWPrefab: {fileID: 1546470821284441854, guid: cbade562a821516489bb07ac4f6ad605, type: 3}
+  SakuraPrefab: {fileID: 1447662181806142486, guid: e4f6dd588117c4d44a936abc36ee99aa, type: 3}
+  SunflowerPrefab: {fileID: 5767640577875138886, guid: 5edbc32fc1edbb3479cb80ce12853c44, type: 3}
+  FallfoliagePrefab: {fileID: 7522598048851565201, guid: ff21706dac0a5e443bf3735611e17787, type: 3}
+  SnowflakesPrefab: {fileID: 1546470821284441854, guid: cbade562a821516489bb07ac4f6ad605, type: 3}
   firePoint: {fileID: 1737247188}
   bulletSpeed: 5
   attackCooldown: 1
@@ -1711,7 +1708,6 @@ MonoBehaviour:
   bgmSource: {fileID: 1995705244}
   normalBGM: {fileID: 8300000, guid: 0c3d392ccfc7b8d4aa6267e2f1d9c4b3, type: 3}
   gameOverBGM: {fileID: 8300000, guid: eb9a851c80f6e984ca2c88dc4ad653dd, type: 3}
-  bossDeathBGM: {fileID: 0}
   gameClearBGM: {fileID: 8300000, guid: b6be149c225a2a44eae394a6c2b79710, type: 3}
 --- !u!82 &1995705244
 AudioSource:

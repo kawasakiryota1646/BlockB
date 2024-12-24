@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2227373433340351763}
   - component: {fileID: 1336607429309382528}
   m_Layer: 0
-  m_Name: SAKURA
+  m_Name: Sakura
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Japan_normal_Attack : MonoBehaviour
 {
-    public GameObject SAKURAPrefab; //弾のプレハブ
-    public GameObject HIMAWARIPrefab; //弾のプレハブ
-    public GameObject MOMIZIPrefab; //弾のプレハブ
-    public GameObject SNOWPrefab; //弾のプレハブ
+    public GameObject SakuraPrefab; //弾のプレハブ
+    public GameObject SunflowerPrefab; //弾のプレハブ
+    public GameObject FallfoliagePrefab; //弾のプレハブ
+    public GameObject SnowflakesPrefab; //弾のプレハブ
     public Transform firePoint;     //発射位置のプレハブ
     public float bulletSpeed = 5f;
     public float attackCooldown = 1.0f;
@@ -63,7 +63,7 @@ public class Japan_normal_Attack : MonoBehaviour
 
     void Fire()
     {
-        GameObject bullet = Instantiate(SAKURAPrefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = Instantiate(SakuraPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.velocity = Vector2.down * bulletSpeed; // 下方向に発射
     }
@@ -82,7 +82,7 @@ public class Japan_normal_Attack : MonoBehaviour
             Vector2 direction = Quaternion.Euler(0, 0, angle) * Vector2.down;
 
             // 弾を生成
-            GameObject bullet = Instantiate(HIMAWARIPrefab, firePoint.position, Quaternion.identity);
+            GameObject bullet = Instantiate(SunflowerPrefab, firePoint.position, Quaternion.identity);
 
             // Rigidbody2Dで速度を与える
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
@@ -102,7 +102,7 @@ public class Japan_normal_Attack : MonoBehaviour
             float randomAngle = Random.Range(90f, 270f);
 
             // 弾を生成
-            GameObject bullet = Instantiate(MOMIZIPrefab, transform.position, Quaternion.identity);
+            GameObject bullet = Instantiate(FallfoliagePrefab, transform.position, Quaternion.identity);
 
             // 発射方向を設定
             Vector3 direction = Quaternion.Euler(0, 0, randomAngle) * Vector3.up;
@@ -140,7 +140,7 @@ public class Japan_normal_Attack : MonoBehaviour
             Vector2 direction = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle));
 
             // 弾を発射
-            GameObject bullet = Instantiate(SNOWPrefab, adjustedFirePosition, Quaternion.identity);
+            GameObject bullet = Instantiate(SnowflakesPrefab, adjustedFirePosition, Quaternion.identity);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
             if (rb != null)
