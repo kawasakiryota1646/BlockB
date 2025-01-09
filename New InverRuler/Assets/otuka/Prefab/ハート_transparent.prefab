@@ -114,9 +114,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.11871412, y: 0}
   serializedVersion: 2
-  m_Radius: 6
+  m_Radius: 6.113465
 --- !u!50 &7625639154050453371
 Rigidbody2D:
   serializedVersion: 4
@@ -156,7 +156,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 0
+  Priority: 129
   DopplerLevel: 1
   MinDistance: 4.341126
   MaxDistance: 500
@@ -224,7 +224,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.924
       inSlope: 0
       outSlope: 0
       tangentMode: 0
