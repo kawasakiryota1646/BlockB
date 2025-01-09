@@ -97,12 +97,12 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("false");
                 StartCoroutine(Flash());
                 Invoke("DamageEnd", 0.5f); // 0.5秒後に無敵状態を終了
-                // hpが3未満の場合、回復アイテムを出現させる
-                if (hp < 3)
-                {
-                    Vector3 spawnPosition = new Vector3(cameraTransform.position.x, cameraTransform.position.y + 5, 0);
-                    Instantiate(healthPickupPrefab, spawnPosition, Quaternion.identity);
-                }
+                //// hpが3未満の場合、回復アイテムを出現させる
+                //if (hp < 3)
+                //{
+                //    Vector3 spawnPosition = new Vector3(cameraTransform.position.x, cameraTransform.position.y + 5, 0);
+                //    Instantiate(healthPickupPrefab, spawnPosition, Quaternion.identity);
+                //}
             }
         }
     }
@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(10f); // 5秒待つ
+            yield return new WaitForSeconds(4f); // 5秒待つ
 
             if (hp < 3)
             {

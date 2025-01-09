@@ -1039,7 +1039,6 @@ MonoBehaviour:
   bgmSource: {fileID: 652405873}
   normalBGM: {fileID: 8300000, guid: 73de32b2a718c1e4691e8191c8ba80c0, type: 3}
   gameOverBGM: {fileID: 8300000, guid: eb9a851c80f6e984ca2c88dc4ad653dd, type: 3}
-  bossDeathBGM: {fileID: 8300000, guid: 35bc428813eff3e48b25c8c618a722a2, type: 3}
   gameClearBGM: {fileID: 8300000, guid: b6be149c225a2a44eae394a6c2b79710, type: 3}
 --- !u!1001 &674332770
 PrefabInstance:
@@ -2548,6 +2547,10 @@ PrefabInstance:
     - target: {fileID: 2720333944863604914, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
       propertyPath: m_Name
       value: USA_BOSS
+      objectReference: {fileID: 0}
+    - target: {fileID: 2720333944863604915, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2720333944863604916, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
       propertyPath: m_RootOrder

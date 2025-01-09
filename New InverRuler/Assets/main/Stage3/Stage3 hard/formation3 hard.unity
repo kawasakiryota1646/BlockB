@@ -423,9 +423,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 771015579013376215, guid: d639102127c0cfb44a8b8aac1874c260, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 1927778271124711288, guid: d639102127c0cfb44a8b8aac1874c260, type: 3}
       propertyPath: m_Text
       value: "\u5831\u916C10000\u30B3\u30A4\u30F3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913401664694017380, guid: d639102127c0cfb44a8b8aac1874c260, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4093898268915697386, guid: d639102127c0cfb44a8b8aac1874c260, type: 3}
       propertyPath: m_Camera
@@ -534,6 +542,10 @@ PrefabInstance:
     - target: {fileID: 6303326102901868487, guid: d639102127c0cfb44a8b8aac1874c260, type: 3}
       propertyPath: m_Text
       value: HP:2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8366073551274295095, guid: d639102127c0cfb44a8b8aac1874c260, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d639102127c0cfb44a8b8aac1874c260, type: 3}

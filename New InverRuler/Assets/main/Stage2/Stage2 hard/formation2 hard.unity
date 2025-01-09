@@ -550,6 +550,10 @@ PrefabInstance:
       propertyPath: BGM
       value: 
       objectReference: {fileID: 251656452}
+    - target: {fileID: 3992127519749490729, guid: b6d9be67925c497419e65dd8197a4f37, type: 3}
+      propertyPath: sceneName
+      value: hard
+      objectReference: {fileID: 0}
     - target: {fileID: 4926873844947695844, guid: b6d9be67925c497419e65dd8197a4f37, type: 3}
       propertyPath: m_SizeDelta.x
       value: 315.97

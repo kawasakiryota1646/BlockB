@@ -40,15 +40,15 @@ public class USA_normal_HP : MonoBehaviour
     void UpdateBossAppearance()
     {
         UpdateAmmoText();
-        if (currentHealth <= 375)
+        if (currentHealth <= 300)
         {
             spriteRenderer.sprite = phase2Sprite; // フェーズ2に変更
         }
-        if (currentHealth <= 250)
+        if (currentHealth <= 200)
         {
             spriteRenderer.sprite = phase3Sprite; // フェーズ3に変更
         }
-        if (currentHealth <= 125)
+        if (currentHealth <= 100)
         {
             spriteRenderer.sprite = phase4Sprite; // フェーズ4に変更
         }
@@ -132,13 +132,16 @@ public class USA_normal_HP : MonoBehaviour
         {
             GameObject coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
             StartCoroutine(HideCoinAfterDelay(coin, 2f)); // 2秒後にコインを非表示にする
+           
         }
     }
+
+
 
     IEnumerator HideCoinAfterDelay(GameObject coin, float delay)
     {
         yield return new WaitForSeconds(delay);
-        coin.SetActive(false); // コインを非表示にする
+        Destroy(coin); // コインを非表示にする
     }
 
     IEnumerator HandleExplosion()

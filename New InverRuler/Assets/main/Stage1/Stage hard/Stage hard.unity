@@ -442,7 +442,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4453932320096314966, guid: 877c26420e16d3e4c90b8d263b204bda, type: 3}
   m_PrefabInstance: {fileID: 4453932318840191248}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &337164742
+--- !u!114 &337164745
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -451,23 +451,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 337164719}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f06b136774343b438662dabf18bed68, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c7642c4544795a4dacca9e153334ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 75
+  maxHealth: 300
   flashDuration: 0.1
-  deathEffects:
-  - {fileID: 6369508233973101628, guid: c29b9abfaf2eebb4b9736fd016fca165, type: 3}
-  - {fileID: 249110656335039890, guid: 0e095b05d310b1b4199896cc70aafd71, type: 3}
-  - {fileID: 8486911459558470706, guid: a9e8cd16f5146a646ba0f22c5cfcb8a0, type: 3}
-  - {fileID: 205398590896992992, guid: 851a771a406db274e9d5a38a2ebe072c, type: 3}
+  deathEffects: []
   retryButton: {fileID: 444979239}
   nextButton: {fileID: 444979240}
   gameClearText: {fileID: 444979241}
   bgmController: {fileID: 1995705243}
   coinPrefab: {fileID: 2366648631505798212, guid: 75f6d05c42fa51e409fe6e0ad76fc3a4, type: 3}
-  coinCount: 50
-  coinsToAdd: 10
+  coinCount: 1
+  coinsToAdd: 50
   damageAudioSource: {fileID: 337164726}
   explosionAudioSource: {fileID: 337164732}
   currentHealth: 0
@@ -1870,7 +1866,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1737247187}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c7642c4544795a4dacca9e153334ef4, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f06b136774343b438662dabf18bed68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SakuraPrefab: {fileID: 1447662181806142486, guid: e4f6dd588117c4d44a936abc36ee99aa, type: 3}
@@ -1883,8 +1879,8 @@ MonoBehaviour:
   Sunflower_bulletCount: 4
   spreadAngle: 50
   randomSpeed: 5
-  randomCount: 8
-  Snowflakes_bulletCount: 8
+  randomCount: 10
+  Snowflakes_bulletCount: 20
   rotationSpeed: 50
   positionOffset: 1
 --- !u!4 &1803740316 stripped

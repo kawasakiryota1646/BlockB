@@ -1689,7 +1689,6 @@ MonoBehaviour:
   bgmSource: {fileID: 1995705244}
   normalBGM: {fileID: 8300000, guid: 9c5f5b13e69b9864b943c1be0e2eb9c8, type: 3}
   gameOverBGM: {fileID: 8300000, guid: eb9a851c80f6e984ca2c88dc4ad653dd, type: 3}
-  bossDeathBGM: {fileID: 8300000, guid: 35bc428813eff3e48b25c8c618a722a2, type: 3}
   gameClearBGM: {fileID: 8300000, guid: b6be149c225a2a44eae394a6c2b79710, type: 3}
 --- !u!82 &1995705244
 AudioSource:
@@ -2625,6 +2624,10 @@ PrefabInstance:
       propertyPath: ammoPrefab
       value: 
       objectReference: {fileID: 3649114772506764417, guid: c0103f6489a850542b5b6f15a98b9a30, type: 3}
+    - target: {fileID: 2863640313265113640, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
+      propertyPath: spawnInterval
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3512458204582337774, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
       propertyPath: ammoText
       value: 

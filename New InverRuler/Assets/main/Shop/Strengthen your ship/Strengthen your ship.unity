@@ -467,6 +467,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 216596435941897363, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 998341068936917413, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
       propertyPath: BGM
       value: 
@@ -474,6 +478,66 @@ PrefabInstance:
     - target: {fileID: 998341068936917413, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
       propertyPath: sceneName
       value: strengthen your ship HP
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088626648998702354, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 338
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088626648998702354, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 230
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088626648998702354, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088626648998702354, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -153
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237082492201249148, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 588
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237082492201249148, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 158
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237082492201249148, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -130
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237082492201249148, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781083962295621157, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_Text
+      value: "\u8CFC\u5165"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781083962295621157, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_Color.b
+      value: 0.100752
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781083962295621157, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_Color.g
+      value: 0.07413671
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781083962295621157, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439385335332562601, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 785
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439385335332562601, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439385335332562601, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5920078815932529408, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
       propertyPath: BGM
@@ -566,6 +630,54 @@ PrefabInstance:
     - target: {fileID: 5920078815932529660, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5920078816799001869, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -193
+      objectReference: {fileID: 0}
+    - target: {fileID: 5920078816799001869, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 91
+      objectReference: {fileID: 0}
+    - target: {fileID: 5920078816799001869, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 283.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5920078816799001869, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5920078817063867034, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 123
+      objectReference: {fileID: 0}
+    - target: {fileID: 5920078817063867034, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 76
+      objectReference: {fileID: 0}
+    - target: {fileID: 5920078817063867034, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 210
+      objectReference: {fileID: 0}
+    - target: {fileID: 5920078817063867034, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025002712737071358, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 622
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025002712737071358, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 158
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025002712737071358, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025002712737071358, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6193327571071377268, guid: edcfa99b49e6c0c40ad0ce9a88ab23e7, type: 3}
       propertyPath: m_Name

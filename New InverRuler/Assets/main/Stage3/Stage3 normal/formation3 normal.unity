@@ -423,6 +423,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 771015579013376215, guid: d639102127c0cfb44a8b8aac1874c260, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913401664694017380, guid: d639102127c0cfb44a8b8aac1874c260, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 4093898268915697386, guid: d639102127c0cfb44a8b8aac1874c260, type: 3}
       propertyPath: m_Camera
       value: 
@@ -519,9 +527,17 @@ PrefabInstance:
       propertyPath: BGM
       value: 
       objectReference: {fileID: 251656452}
+    - target: {fileID: 4093898269338302722, guid: d639102127c0cfb44a8b8aac1874c260, type: 3}
+      propertyPath: sceneName
+      value: hard
+      objectReference: {fileID: 0}
     - target: {fileID: 4093898270462964954, guid: d639102127c0cfb44a8b8aac1874c260, type: 3}
       propertyPath: BGM
       value: 
       objectReference: {fileID: 251656452}
+    - target: {fileID: 8366073551274295095, guid: d639102127c0cfb44a8b8aac1874c260, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d639102127c0cfb44a8b8aac1874c260, type: 3}

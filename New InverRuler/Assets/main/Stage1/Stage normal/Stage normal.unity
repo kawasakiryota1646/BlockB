@@ -786,11 +786,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5382f32aa9569b74c96c4ecde3d1db59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!212 &337867350 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 3535744280295969704, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
-  m_PrefabInstance: {fileID: 8207307331577637637}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &337867355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2732,7 +2727,7 @@ PrefabInstance:
       objectReference: {fileID: 1432296480}
     - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
       propertyPath: spawnHeight
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
       propertyPath: spawnRangeX
@@ -2757,7 +2752,7 @@ PrefabInstance:
     - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
       propertyPath: spriteRenderer
       value: 
-      objectReference: {fileID: 337867350}
+      objectReference: {fileID: 0}
     - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
       propertyPath: cameraTransform
       value: 
