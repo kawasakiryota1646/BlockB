@@ -11,7 +11,7 @@ public class ButtonManager : MonoBehaviour
     public GameObject image;//表示するimageオブジェクト
     public Text text;//表示するテキスト
     public Button triggerButton; // 表示をトリガーするボタン
-    private bool buttonsVisible = false; // ボタンの表示状態を追跡するフラグ
+    private bool buttonsVisible = true; // ボタンの表示状態を追跡するフラグ
     public AudioSource Button_Audio;
     bool first_Button = false;
     void Start()
@@ -29,7 +29,7 @@ public class ButtonManager : MonoBehaviour
         {
             audioSource.Play();
         }
-        buttonsVisible = !buttonsVisible; // フラグを反転させる
+        //buttonsVisible = !buttonsVisible; // フラグを反転させる
         text.gameObject.SetActive(buttonsVisible);
         image.gameObject.SetActive(buttonsVisible);
 
