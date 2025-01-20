@@ -1777,10 +1777,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1961931334}
-  - component: {fileID: 1961931337}
   - component: {fileID: 1961931336}
   - component: {fileID: 1961931335}
   - component: {fileID: 1961931338}
+  - component: {fileID: 1961931339}
   m_Layer: 0
   m_Name: SE
   m_TagString: Untagged
@@ -1913,22 +1913,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSE: {fileID: 1961931335}
   itemSE2: {fileID: 1961931338}
---- !u!58 &1961931337
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961931333}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.002221966}
-  serializedVersion: 2
-  m_Radius: 0.23618336
 --- !u!82 &1961931338
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2025,6 +2009,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &1961931339
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961931333}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0018120855, y: 0.015681319}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.33532497, y: 0.38874322}
+  m_EdgeRadius: 0
 --- !u!1 &1995705242
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,24 +21,18 @@ public class ItemSE : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyBullet")
+        if (other.CompareTag("Enemy") || other.CompareTag("EnemyBullet"))
         {
-            // Õ“Ë‚ğ–³Œø‚É‚·‚éˆ—
-            Physics2D.IgnoreCollision(other.composite, GetComponent<Collider2D>());
+            // “G‚Ü‚½‚Í“G‚Ì’e‚Æ‚ÌÕ“Ë‚ğ–³Œø‚É‚·‚é
+            Physics2D.IgnoreCollision(other, GetComponent<Collider2D>());
         }
-        if (other.gameObject.CompareTag("Heart"))
+        else if (other.CompareTag("Heart"))
         {
-            if (itemSE != null)
-            {
-                itemSE.Play();
-            }
+            itemSE.Play();
         }
-        if (other.gameObject.CompareTag("Heal"))
+        else if (other.CompareTag("Heal"))
         {
-            if (itemSE2 != null)
-            {
-                itemSE2.Play();
-            }
+            itemSE2.Play();
         }
     }
 }

@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     float axisV; //縦軸
     Rigidbody2D rbody; //Rigidbody2D
                        //ダメージ対応
-    public AudioSource Heartaudio;
+
     public static int hp = 3; //プレイヤーのHP
     public static string gameState; //ゲームの状態
     bool inDamage = true; //ダメージ中フラグ
@@ -73,13 +73,7 @@ public class PlayerController : MonoBehaviour
         {
             GetDamage();//GetDamage関数に移動
         }
-        if (collision.gameObject.tag == "Heart")
-        {
-            if (Heartaudio != null)
-            {
-                Heartaudio.Play();
-            }
-        }
+       
     }
 
 
