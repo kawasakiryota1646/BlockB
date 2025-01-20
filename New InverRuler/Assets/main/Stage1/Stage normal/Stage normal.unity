@@ -1657,13 +1657,15 @@ MonoBehaviour:
   SunflowerPrefab: {fileID: 5767640577875138886, guid: 5edbc32fc1edbb3479cb80ce12853c44, type: 3}
   FallfoliagePrefab: {fileID: 7522598048851565201, guid: ff21706dac0a5e443bf3735611e17787, type: 3}
   SnowflakesPrefab: {fileID: 1546470821284441854, guid: cbade562a821516489bb07ac4f6ad605, type: 3}
-  firePoint: {fileID: 1737247188}
-  bulletSpeed: 5
-  attackCooldown: 1
-  randomSpeed: 5
-  randomCount: 6
-  rotationSpeed: 50
-  bulletCount: 10
+  FirePoint: {fileID: 1737247188}
+  AttackCooldown: 1
+  BulletSpeed: 5
+  Sunflower_bulletCount: 4
+  spreadAngle: 50
+  Fallfoliage_randomSpeed: 5
+  Fallfoliage_randomCount: 6
+  Snowflakes_rotationSpeed: 50
+  Snowflakes_bulletCount: 10
   positionOffset: 1
 --- !u!4 &1803740316 stripped
 Transform:

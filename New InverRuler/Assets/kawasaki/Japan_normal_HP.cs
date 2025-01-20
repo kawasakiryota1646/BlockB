@@ -41,15 +41,15 @@ public class Japan_normal_HP : MonoBehaviour
     void UpdateBossAppearance()
     {
         UpdateAmmoText();
-        if (currentHealth <= 75)
+        if (currentHealth <= 74)
         {
             spriteRenderer.sprite = phase2Sprite; // フェーズ2に変更
         }
-        if (currentHealth <= 50)
+        if (currentHealth <= 49)
         {
             spriteRenderer.sprite = phase3Sprite; // フェーズ3に変更
         }
-        if (currentHealth <= 25)
+        if (currentHealth <= 24)
         {
             spriteRenderer.sprite = phase4Sprite; // フェーズ4に変更
         }
