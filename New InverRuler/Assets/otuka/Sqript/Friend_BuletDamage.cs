@@ -13,7 +13,7 @@ public class Friend_BuletDamage : MonoBehaviour
 
     void UpdateDamageText()
     {
-        damageText.text = "’e‚ÌˆĞ—Í: " + PlayerPrefs.GetFloat("BulletFriendDamage", FriendBullet_Damage.damage).ToString();
+        damageText.text = ": " + PlayerPrefs.GetFloat("BulletFriendDamage", FriendBullet_Damage.damage).ToString();
         //•Û‘¶‚³‚ê‚½–¡•û‹@‘Ì‚Ì’e‚ğ“Ç‚İ‚İ
         
     }

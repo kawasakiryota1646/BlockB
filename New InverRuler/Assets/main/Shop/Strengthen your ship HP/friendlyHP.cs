@@ -13,13 +13,13 @@ public class friendlyHP : MonoBehaviour
     public Text costText; // 値段表示用のTextコンポーネント
     private int purchaseCount; // 購入回数を管理する変数
     private int baseCost = 50; // 基本のコイン消費量
-
+    public AudioSource Lackofcoins;//買えなかった時に鳴らすSE
     void Start()
     {
 
         purchaseCount = PlayerPrefs.GetInt("Number of Life Purchases", 0); // 保存された購入回数を読み込む
-        FriendController.hp1 = PlayerPrefs.GetInt("Number of Lives", 1); // 保存された弾の威力を読み込む
-        FriendController2.hp2 = PlayerPrefs.GetInt("Number of Lives", 1); // 保存された弾の威力を読み込む
+        FriendController.hp1 = PlayerPrefs.GetInt("Number of Lives", 1); // 保存されたHPの威力を読み込む
+        FriendController2.hp2 = PlayerPrefs.GetInt("Number of Lives", 1); // 保存されたHPの威力を読み込む
         changeDamageButton.onClick.AddListener(ChangeBulletDamage);
         insufficientCoinsText.gameObject.SetActive(false); // 初期状態では非表示
         insufficientCoinsObject.SetActive(false); // 初期状態では非表示
@@ -60,12 +60,20 @@ public class friendlyHP : MonoBehaviour
         }
         else if (FriendController.hp1 >= 3)
         {
+            if (Lackofcoins != null)
+            {
+                Lackofcoins.Play();//買えなかった時に鳴らす
+            }
             insufficientCoinsText.text = "HPは最大です"; // 上限に達したメッセージを設定
             insufficientCoinsText.gameObject.SetActive(true); // メッセージを表示
             insufficientCoinsObject.SetActive(true); // オブジェクトを表示
         }
         else
         {
+            if (Lackofcoins != null)
+            {
+                Lackofcoins.Play();//買えなかった時に鳴らす
+            }
             insufficientCoinsText.text = "コインが足りません"; // メッセージを設定
             insufficientCoinsText.gameObject.SetActive(true); // メッセージを表示
             insufficientCoinsObject.SetActive(true); // オブジェクトを表示
@@ -75,7 +83,7 @@ public class friendlyHP : MonoBehaviour
     void UpdateCostText()
     {
         int currentCost = baseCost + (purchaseCount * 10); // 現在のコイン消費量を計算
-        costText.text = "枚数は " + currentCost.ToString() + ""; // 値段を表示
+        costText.text = "×" + currentCost.ToString() + ""; // 値段を表示
     }
 
     public void OnMouseEnter()

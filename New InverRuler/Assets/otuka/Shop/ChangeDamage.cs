@@ -11,6 +11,7 @@ public class ChangeDamage : MonoBehaviour
     private int purchaseCount; // 購入回数を管理する変数
     private int baseCost = 20; // 基本のコイン消費量
     public AudioSource Button_Audio;//ボタンの上にマウスポインタが来た時に再生するAudioSource
+    public AudioSource Lackofcoins;//買えなかった時に鳴らすSE
     bool first_Button = false;
 
     void Start()
@@ -49,12 +50,20 @@ public class ChangeDamage : MonoBehaviour
         }
         else if (AttckBullet.damage >= 50f)//自機(プレイヤー)の弾の威力が最大なら中の処理を実行
         {
+            if (Lackofcoins != null)
+            {
+                Lackofcoins.Play();//買えなかった時に鳴らす
+            }
             insufficientCoinsText.text = "弾の威力は最大です"; // 上限に達したメッセージを設定
             insufficientCoinsText.gameObject.SetActive(true); // メッセージを表示
             insufficientCoinsObject.SetActive(true); // オブジェクトを表示
         }
         else//どれも当てはまらないなら中の処理を実行
         {
+            if (Lackofcoins != null)
+            {
+                Lackofcoins.Play();//買えなかった時に鳴らす
+            }
             insufficientCoinsText.text = "コインが足りません"; // メッセージを設定
             insufficientCoinsText.gameObject.SetActive(true); // メッセージを表示
             insufficientCoinsObject.SetActive(true); // オブジェクトを表示
@@ -64,7 +73,7 @@ public class ChangeDamage : MonoBehaviour
     void UpdateCostText()
     {
         int currentCost = baseCost + (purchaseCount * 5); // 現在のコイン消費量を計算
-        costText.text = "枚数は " + currentCost.ToString() + ""; // 値段を表示
+        costText.text = "×" + currentCost.ToString() + ""; // 値段を表示
     }
 
     public void OnPointerEnter()

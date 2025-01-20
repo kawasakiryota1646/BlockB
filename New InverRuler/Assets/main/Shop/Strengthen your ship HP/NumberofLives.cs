@@ -15,7 +15,7 @@ public class NumberofLives : MonoBehaviour
 
     void UpdatelifeText()
     {
-        damageText.text = "HP: " + PlayerPrefs.GetInt("Number of Livess", FriendController.hp1).ToString();
+        damageText.text = ": " + PlayerPrefs.GetInt("Number of Livess", FriendController.hp1).ToString();
 
     }
 

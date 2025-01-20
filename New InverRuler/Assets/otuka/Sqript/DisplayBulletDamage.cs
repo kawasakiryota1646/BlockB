@@ -12,7 +12,7 @@ public class DisplayBulletDamage : MonoBehaviour
 
     void UpdateDamageText()
     {
-        damageText.text = "弾の威力: " + PlayerPrefs.GetFloat("AttckBulletDamage", AttckBullet.damage).ToString();
+        damageText.text = ": " + PlayerPrefs.GetFloat("AttckBulletDamage", AttckBullet.damage).ToString();
         //保存された自機(プレイヤー)の弾を読み込み
     }
 
