@@ -22,8 +22,8 @@ public class Health : MonoBehaviour
                 LifeAudioSource.Play();
             } 
                 PlayerController.hp++;
-                Destroy(gameObject); // ‰ñ•œƒAƒCƒeƒ€‚ğÁ‚·
             }
+            Destroy(gameObject);
         }
     }
 }

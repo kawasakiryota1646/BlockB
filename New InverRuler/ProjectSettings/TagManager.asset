@@ -11,6 +11,7 @@ TagManager:
   - Wall
   - PlayerBullet
   - Heart
+  - Heal
   layers:
   - Default
   - TransparentFX
