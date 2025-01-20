@@ -313,6 +313,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d4d2a904c2f7145bb73472f1efd456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &311672312 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8886797469479870395, guid: ecc0a338d3341b742b39c0fb38f2f80f, type: 3}
+  m_PrefabInstance: {fileID: 7282030093578978632}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &615991123
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,6 +590,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4237541127886155951, guid: ecc0a338d3341b742b39c0fb38f2f80f, type: 3}
+      propertyPath: coinTarget
+      value: 
+      objectReference: {fileID: 311672312}
     - target: {fileID: 4462718092643258863, guid: ecc0a338d3341b742b39c0fb38f2f80f, type: 3}
       propertyPath: m_SizeDelta.x
       value: 336.35

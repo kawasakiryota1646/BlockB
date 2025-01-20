@@ -5,7 +5,8 @@ using UnityEngine;
 public class CoinManager : MonoBehaviour
 {
     public static CoinManager instance;
-    public static int coinCount = 0; // 初期値を0に設定
+    public static int coinCount = 0; // 現在のコイン数
+    public static int previousCoinCount = 0; // 前回のコイン数
 
     private void Awake()
     {
@@ -40,6 +41,7 @@ public class CoinManager : MonoBehaviour
     private void SaveCoins()
     {
         PlayerPrefs.SetInt("CoinCount", coinCount);
+        PlayerPrefs.SetInt("PreviousCoinCount", previousCoinCount);
         PlayerPrefs.Save();
     }
 
@@ -53,6 +55,21 @@ public class CoinManager : MonoBehaviour
         {
             coinCount = 0;
         }
+
+        if (PlayerPrefs.HasKey("PreviousCoinCount"))
+        {
+            previousCoinCount = PlayerPrefs.GetInt("PreviousCoinCount");
+        }
+        else
+        {
+            previousCoinCount = 0;
+        }
+    }
+
+    public void UpdatePreviousCoinCount()
+    {
+        previousCoinCount = coinCount;
+        SaveCoins();
     }
 }
 

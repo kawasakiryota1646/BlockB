@@ -117,6 +117,9 @@ public class Japan_normal_HP : MonoBehaviour
         // コインを生成する
         SpawnCoins();
 
+        // コインを追加する前に前回のコイン数を更新
+        CoinManager.instance.UpdatePreviousCoinCount();
+
         // コインを追加する
         CoinManager.instance.AddCoins(coinsToAdd);
     }
