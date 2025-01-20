@@ -10,11 +10,12 @@ public class FriendController : MonoBehaviour
     public AudioSource explosionAudioSource; // 爆発効果音用
     bool inDamage = true; // ダメージ中フラグ
     Bulletstrengthening bulletstrengthening;
+    const int FIRSTHP = 1;
     // Start is called before the first frame update
     void Awake()
     {
        
-        hp1 = PlayerPrefs.GetInt("Number of Lives", 1);
+        hp1 = PlayerPrefs.GetInt("Number of Lives", FIRSTHP);
     }
 
     // Update is called once per frame
@@ -89,7 +90,7 @@ public class FriendController : MonoBehaviour
 
     public void ResetHealth()
     {
-        hp1 = PlayerPrefs.GetInt("Number of Lives", 1); // 保存された弾の威力を読み込む
+        hp1 = PlayerPrefs.GetInt("Number of Lives", FIRSTHP); // 保存された弾の威力を読み込む
     }
 
 

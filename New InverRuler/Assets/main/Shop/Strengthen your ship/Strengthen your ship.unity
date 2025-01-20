@@ -522,28 +522,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005977587249c734eb53ccc8eddfa4d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button_Audio: {fileID: 2015889480}
-  changeDamageButton: {fileID: 2015889481}
-  CoinAudioSource: {fileID: 2015889479}
+  buttonAudio: {fileID: 0}
+  changeHP: {fileID: 2015889481}
+  coinAudioSource: {fileID: 0}
   insufficientCoinsText: {fileID: 729620361}
   insufficientCoinsObject: {fileID: 861866538}
   costText: {fileID: 1331890460}
-  Lackofcoins: {fileID: 2015889477}
---- !u!82 &2015889477 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 7647403350316045898, guid: 759622df9cdd9f549a54a2ac49f86d3f, type: 3}
-  m_PrefabInstance: {fileID: 6332523446853453204}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &2015889479 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5442207557537617780, guid: 759622df9cdd9f549a54a2ac49f86d3f, type: 3}
-  m_PrefabInstance: {fileID: 6332523446853453204}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &2015889480 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 416499692295289023, guid: 759622df9cdd9f549a54a2ac49f86d3f, type: 3}
-  m_PrefabInstance: {fileID: 6332523446853453204}
-  m_PrefabAsset: {fileID: 0}
+  lackofcoins: {fileID: 0}
 --- !u!114 &2015889481 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5345254088446895248, guid: 759622df9cdd9f549a54a2ac49f86d3f, type: 3}
