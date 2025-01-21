@@ -2322,6 +2322,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1995705244}
     - target: {fileID: 5864665417910398277, guid: eea60feb8d249f9419909f7da2fa2436, type: 3}
+      propertyPath: sceneName
+      value: Stage3 hard result
+      objectReference: {fileID: 0}
+    - target: {fileID: 5864665417910398277, guid: eea60feb8d249f9419909f7da2fa2436, type: 3}
       propertyPath: friendController
       value: 
       objectReference: {fileID: 1069158763}

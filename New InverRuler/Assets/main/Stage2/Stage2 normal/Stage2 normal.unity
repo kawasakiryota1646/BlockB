@@ -793,6 +793,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 652405873}
     - target: {fileID: 5575509465995980817, guid: bf40e88142349554baed84d86dfff278, type: 3}
+      propertyPath: sceneName
+      value: Stage2 normal result
+      objectReference: {fileID: 0}
+    - target: {fileID: 5575509465995980817, guid: bf40e88142349554baed84d86dfff278, type: 3}
       propertyPath: friendController
       value: 
       objectReference: {fileID: 1436907861}

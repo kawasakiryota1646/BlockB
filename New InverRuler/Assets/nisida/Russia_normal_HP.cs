@@ -72,6 +72,10 @@ public class Russia_normal_HP : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
+            if (explosionAudioSource != null)
+            {
+                explosionAudioSource.Play();
+            }
             StartCoroutine(Die());
            
         }
@@ -89,11 +93,7 @@ public class Russia_normal_HP : MonoBehaviour
         // ボスを倒したことを記録
         PlayerPrefs.SetInt("BossDefeated", 1);
 
-        AudioSource audioSource = GetComponent<AudioSource>();
-        if (audioSource != null)
-        {
-            audioSource.Play();
-        }
+        
 
         // シーン内のすべての "EnemyBullet" タグが付いたオブジェクトを消滅させる
         GameObject[] enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
@@ -121,9 +121,10 @@ public class Russia_normal_HP : MonoBehaviour
         CoinManager.instance.AddCoins(coinsToAdd);
         Debug.Log("coin");
 
-       
+        // コインを追加する前に前回のコイン数を更新
+        CoinManager.instance.UpdatePreviousCoinCount();
 
-        
+
     }
     
 

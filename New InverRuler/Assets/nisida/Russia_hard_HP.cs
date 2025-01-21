@@ -70,6 +70,11 @@ public class Russia_hard_HP : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
+
+            if (explosionAudioSource != null)
+            {
+                explosionAudioSource.Play();
+            }
             StartCoroutine(Die());
 
         }
@@ -84,11 +89,7 @@ public class Russia_hard_HP : MonoBehaviour
         yield return StartCoroutine(HandleExplosion()); // コルーチンを開始
         Debug.Log("Boss died");
 
-        AudioSource audioSource = GetComponent<AudioSource>();
-        if (audioSource != null)
-        {
-            audioSource.Play();
-        }
+       
 
         // シーン内のすべての "EnemyBullet" タグが付いたオブジェクトを消滅させる
         GameObject[] enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
@@ -115,8 +116,11 @@ public class Russia_hard_HP : MonoBehaviour
         // コインを追加する
         CoinManager.instance.AddCoins(coinsToAdd);
 
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("エンディング"); // 次のシーン名を指定
+
+        // コインを追加する前に前回のコイン数を更新
+        CoinManager.instance.UpdatePreviousCoinCount();
+
+        
     }
 
     private IEnumerator Flash()

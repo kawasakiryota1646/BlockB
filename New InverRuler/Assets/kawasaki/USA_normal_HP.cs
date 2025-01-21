@@ -68,6 +68,11 @@ public class USA_normal_HP : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
+
+            if (explosionAudioSource != null)
+            {
+                explosionAudioSource.Play();
+            }
             StartCoroutine(Die());
            
         }
@@ -82,11 +87,7 @@ public class USA_normal_HP : MonoBehaviour
         yield return StartCoroutine(HandleExplosion()); // コルーチンを開始
         Debug.Log("Boss died");
         
-        AudioSource audioSource = GetComponent<AudioSource>();
-        if (audioSource != null)
-        {
-            audioSource.Play();
-        }
+      
 
         // シーン内のすべての "EnemyBullet" タグが付いたオブジェクトを消滅させる
         GameObject[] enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
@@ -113,6 +114,9 @@ public class USA_normal_HP : MonoBehaviour
 
         // コインを生成する
         SpawnCoins();
+
+        // コインを追加する前に前回のコイン数を更新
+        CoinManager.instance.UpdatePreviousCoinCount();
 
         // コインを追加する
         CoinManager.instance.AddCoins(coinsToAdd);

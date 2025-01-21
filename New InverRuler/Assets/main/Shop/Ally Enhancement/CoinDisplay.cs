@@ -9,7 +9,7 @@ public class CoinDisplay : MonoBehaviour
     public Text coinText;
     public Transform coinTarget; // コインの目的地
 
-    private void Start()
+    private void Update()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
 
@@ -17,6 +17,7 @@ public class CoinDisplay : MonoBehaviour
         {
             coinText.text = "0";
             // 特定のシーンでは増加アニメーションをスキップして合計枚数を表示
+
             coinText.text = CoinManager.coinCount.ToString();
         }
         else
@@ -26,6 +27,8 @@ public class CoinDisplay : MonoBehaviour
         }
     }
 
+  
+
     private IEnumerator AddCoinsWithAnimation(int startCoins, int endCoins)
     {
         int displayedCoins = startCoins;
@@ -33,8 +36,10 @@ public class CoinDisplay : MonoBehaviour
         {
             displayedCoins++;
             coinText.text = displayedCoins.ToString();
-            yield return new WaitForSeconds(0.1f); // アニメーションの速度を調整
+            yield return new WaitForSeconds(0.09f); // アニメーションの速度を調整
         }
     }
+
+ 
 }
 

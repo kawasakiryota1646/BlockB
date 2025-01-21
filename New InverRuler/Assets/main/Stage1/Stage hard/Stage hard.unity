@@ -456,7 +456,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 300
   flashDuration: 0.1
-  deathEffects: []
+  deathEffects:
+  - {fileID: 6369508233973101628, guid: c29b9abfaf2eebb4b9736fd016fca165, type: 3}
+  - {fileID: 249110656335039890, guid: 0e095b05d310b1b4199896cc70aafd71, type: 3}
+  - {fileID: 8486911459558470706, guid: a9e8cd16f5146a646ba0f22c5cfcb8a0, type: 3}
+  - {fileID: 205398590896992992, guid: 851a771a406db274e9d5a38a2ebe072c, type: 3}
   retryButton: {fileID: 444979239}
   nextButton: {fileID: 444979240}
   gameClearText: {fileID: 444979241}
@@ -918,6 +922,10 @@ PrefabInstance:
       propertyPath: BGM
       value: 
       objectReference: {fileID: 1995705244}
+    - target: {fileID: 5575509465995980817, guid: bf40e88142349554baed84d86dfff278, type: 3}
+      propertyPath: sceneName
+      value: Stage1 hard result
+      objectReference: {fileID: 0}
     - target: {fileID: 5575509465995980817, guid: bf40e88142349554baed84d86dfff278, type: 3}
       propertyPath: friendController
       value: 
