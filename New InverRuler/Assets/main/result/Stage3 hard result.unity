@@ -352,7 +352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7107878103053749423, guid: eb66377b52c490746b63f7883573b7db, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7107878103353709614, guid: eb66377b52c490746b63f7883573b7db, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -453,6 +453,14 @@ PrefabInstance:
     - target: {fileID: 7107878103474078363, guid: eb66377b52c490746b63f7883573b7db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7107878103845746817, guid: eb66377b52c490746b63f7883573b7db, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b97a6f8cffbd6404787320197da95dbc, type: 3}
+    - target: {fileID: 7107878103845746831, guid: eb66377b52c490746b63f7883573b7db, type: 3}
+      propertyPath: sceneName
+      value: "\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0 1"
       objectReference: {fileID: 0}
     - target: {fileID: 8213653278878990572, guid: eb66377b52c490746b63f7883573b7db, type: 3}
       propertyPath: m_Text

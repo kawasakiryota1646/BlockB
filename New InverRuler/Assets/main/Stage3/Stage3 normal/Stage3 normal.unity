@@ -2279,6 +2279,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1829886307}
     - target: {fileID: 4838079792094807344, guid: c3851e233fe21c647be7a23b9efbc8b3, type: 3}
+      propertyPath: coinsToAdd
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838079792094807344, guid: c3851e233fe21c647be7a23b9efbc8b3, type: 3}
       propertyPath: bgmController
       value: 
       objectReference: {fileID: 1995705243}
