@@ -467,7 +467,7 @@ MonoBehaviour:
   bgmController: {fileID: 1995705243}
   coinPrefab: {fileID: 2366648631505798212, guid: 75f6d05c42fa51e409fe6e0ad76fc3a4, type: 3}
   coinCount: 1
-  coinsToAdd: 10
+  coinsToAdd: 20
   damageAudioSource: {fileID: 337164726}
   explosionAudioSource: {fileID: 337164732}
   currentHealth: 0

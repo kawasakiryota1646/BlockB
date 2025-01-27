@@ -47,15 +47,15 @@ public class USA_normal_Attack : MonoBehaviour
         {
             if (bossHealth != null)
             {
-                if (bossHealth.currentHealth > 300)
+                if (bossHealth.currentHealth > 225)
                 {
                     AttackPattern1();
                 }
-                else if (bossHealth.currentHealth > 200)
+                else if (bossHealth.currentHealth > 150)
                 {
                     AttackPattern2();
                 }
-                else if (bossHealth.currentHealth > 100)
+                else if (bossHealth.currentHealth > 75)
                 {
                     AttackPattern3();
                 }
