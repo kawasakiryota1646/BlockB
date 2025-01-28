@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         axisV = Input.GetAxisRaw("Vertical"); //ã‰ºƒL[“ü—Í
 
         //hp‚ª‚O‚È‚çGameOverŠÖ”‚É”ò‚Ô
-        if (hp == 0)
+        if (hp <= 0)
         {
             StartCoroutine(GameOver());
         }
@@ -112,6 +112,7 @@ public class PlayerController : MonoBehaviour
 
     void DamageEnd()
     {
+        
         inDamage = true;
         Debug.Log("true");
     }
