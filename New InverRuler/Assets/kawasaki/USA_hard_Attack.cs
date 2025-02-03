@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//a
 public class USA_hard_Attack : MonoBehaviour
 {
     public GameObject UKIPrefab; //’e‚ÌƒvƒŒƒnƒu
