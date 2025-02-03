@@ -1,5 +1,7 @@
 using UnityEngine;
-
+/// <summary>
+/// BGMの再生、切り替えをするスクリプト
+/// </summary>
 public class BGMController : MonoBehaviour
 {
     public AudioSource bgmSource;//BGMを再生するAudioSource

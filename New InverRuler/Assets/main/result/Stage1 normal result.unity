@@ -344,7 +344,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7107878103053749423, guid: eb66377b52c490746b63f7883573b7db, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 45
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7107878103353709615, guid: eb66377b52c490746b63f7883573b7db, type: 3}
+      propertyPath: m_Text
+      value: "\u6240\u6301\u679A\u6570"
       objectReference: {fileID: 0}
     - target: {fileID: 7107878103353709615, guid: eb66377b52c490746b63f7883573b7db, type: 3}
       propertyPath: m_FontData.m_FontSize
@@ -442,13 +446,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7107878103845746830, guid: eb66377b52c490746b63f7883573b7db, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7107878103845746830, guid: eb66377b52c490746b63f7883573b7db, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000012093922
+      objectReference: {fileID: 0}
+    - target: {fileID: 7107878103845746830, guid: eb66377b52c490746b63f7883573b7db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0.001
+      objectReference: {fileID: 0}
     - target: {fileID: 8213653278878990572, guid: eb66377b52c490746b63f7883573b7db, type: 3}
       propertyPath: m_Text
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8213653278878990572, guid: eb66377b52c490746b63f7883573b7db, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 55
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb66377b52c490746b63f7883573b7db, type: 3}

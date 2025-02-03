@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// プレイヤーの弾の威力を増やすスクリプト
+/// </summary>
 public class ChangeDamage : MonoBehaviour
 {
     public Button changeDamageButton;//自機(プレイヤー)の弾の威力を変化させるボタン
@@ -13,6 +16,8 @@ public class ChangeDamage : MonoBehaviour
     public AudioSource Button_Audio;//ボタンの上にマウスポインタが来た時に再生するAudioSource
     public AudioSource Lackofcoins;//買えなかった時に鳴らすSE
     bool first_Button = false;
+    public GameObject buy;
+    public GameObject Soldout;
 
     void Start()
     {
@@ -21,6 +26,8 @@ public class ChangeDamage : MonoBehaviour
         changeDamageButton.onClick.AddListener(ChangeBulletDamage);//ボタンを押したらChangeBulletDamage関数に移動
         insufficientCoinsText.gameObject.SetActive(false); // 初期状態では非表示
         insufficientCoinsObject.SetActive(false); // 初期状態では非表示
+        Soldout.SetActive(false);
+        buy.SetActive(true);
         UpdateCostText(); // 初期値を表示
     }
 
@@ -57,6 +64,8 @@ public class ChangeDamage : MonoBehaviour
             insufficientCoinsText.text = "弾の威力は最大です"; // 上限に達したメッセージを設定
             insufficientCoinsText.gameObject.SetActive(true); // メッセージを表示
             insufficientCoinsObject.SetActive(true); // オブジェクトを表示
+            buy.SetActive(false);
+            Soldout.SetActive(true);
         }
         else//どれも当てはまらないなら中の処理を実行
         {

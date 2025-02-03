@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Timeline;
 
+/// <summary>
+/// 回復アイテムを獲得した時に鳴らすSEを管理するスクリプト
+/// </summary>
 public class ItemSE : MonoBehaviour
 {
     public AudioSource itemSE;

@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 味方機体の弾の威力を表示するスクリプト
+/// </summary>
 public class Friend_BuletDamage : MonoBehaviour
 {
     public Text damageText;//フレンドの弾の威力を表示するtext

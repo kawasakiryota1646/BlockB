@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// 特定のシーンのBGMを続けて再生するスクリプト
+/// </summary>
 public class BGMcontinuation : MonoBehaviour
 {
     private static BGMcontinuation instance;

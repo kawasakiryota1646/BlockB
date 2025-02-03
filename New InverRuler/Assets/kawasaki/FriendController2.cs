@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 2人目味方機体の弾、HPを管理するスクリプト
+/// </summary>
 public class FriendController2 : MonoBehaviour
 {
     public GameObject friend;

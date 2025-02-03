@@ -26,6 +26,9 @@ public class Russia_hard_HP : MonoBehaviour
     public Sprite phase3Sprite;
     public Sprite phase4Sprite;
     public Text ammoText;
+    public GameObject gameOverUI; // ゲームオーバー時のUI
+    public GameObject retryUI; // ゲームオーバー時のUI
+    public GameObject StageSelectUI; // ゲームオーバー時のUI
     void Start()
     {
 
@@ -104,6 +107,15 @@ public class Russia_hard_HP : MonoBehaviour
         NEXTButton.SetActive(true);
         gameClearText.SetActive(true);
 
+
+
+        if (NEXTButton == true)
+        {
+            // ゲームオーバーUIを表示
+            gameOverUI.SetActive(false);
+            retryUI.SetActive(false);
+            StageSelectUI.SetActive(false);
+        }
         // ゲームクリアBGMを再生する
         if (bgmController != null)
         {

@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement; //シーンの切り替えに必要
 using UnityEngine.EventSystems;
 using UnityEngine.Experimental.GlobalIllumination; // マウスイベントに必要
 using UnityEngine.UI;
-
+/// <summary>
+/// プレイヤーのステータスや所持しているコインを最初の状態に戻すスクリプト
+/// </summary>
 public class ResetGame : MonoBehaviour
 {
    
@@ -14,6 +16,10 @@ public class ResetGame : MonoBehaviour
     public CoinManager coinManager;//CoinManagerを参照
     public AudioSource Button_Audio;////ボタンの上にマウスポインタが来た時に再生するためのAudioSource
     bool first_Button = false;
+    const int FRIEND_HP = 3;
+    const int FRIEND_BULLET = 1;
+    const int PLAYER_BULLET = 5;
+    const int COIN_COUNT = 0;
     void Start()
     {
         resetButton.onClick.AddListener(ResetAllScenes);//resetButtonを押したらResetAllScenes関数に移動
@@ -49,11 +55,11 @@ public class ResetGame : MonoBehaviour
         // ボスを倒したことを記録
         PlayerPrefs.SetInt("BossDefeated", 0);
         //それぞれの数値を初期化する
-        CoinManager.coinCount = 0;
-        AttckBullet.damage = 5;
-        FriendBullet_Damage.damage = 1;
-        FriendController.hp1 = 1;
-        FriendController2.hp2 = 1;
+        CoinManager.coinCount = COIN_COUNT;
+        AttckBullet.damage = PLAYER_BULLET;
+        FriendBullet_Damage.damage = FRIEND_BULLET;
+        FriendController.hp1 = FRIEND_HP;
+        FriendController2.hp2 = FRIEND_HP;
         
     }
 

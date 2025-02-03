@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// プレイヤーの弾丸、発射を管理するスクリプト
+/// </summary>
 public class BulletController : MonoBehaviour
 {
     public GameObject bulletPrefab;//プレイヤーの弾のプレハブ

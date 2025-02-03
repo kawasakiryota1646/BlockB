@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class USA_normal_HP : MonoBehaviour
 {
     public int maxHealth = 100;
@@ -25,6 +26,9 @@ public class USA_normal_HP : MonoBehaviour
     public Sprite phase3Sprite;
     public Sprite phase4Sprite;
     public Text ammoText;
+    public GameObject gameOverUI; // ゲームオーバー時のUI
+    public GameObject retryUI; // ゲームオーバー時のUI
+    public GameObject StageSelectUI; // ゲームオーバー時のUI
     void Start()
     {
         currentHealth = maxHealth;
@@ -106,6 +110,15 @@ public class USA_normal_HP : MonoBehaviour
         nextButton.SetActive(true);
         gameClearText.SetActive(true);
 
+
+
+
+        if (retryButton == true)
+        {
+            gameOverUI.SetActive(false); // ゲームオーバーUIを非表示にする
+            retryUI.SetActive(false); // ゲームオーバーUIを非表示にする
+            StageSelectUI.SetActive(false); // ゲームオーバーUIを非表示にする
+        }
         // ゲームクリアBGMを再生する
         if (bgmController != null)
         {

@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement; //シーンの切り替えに必要
 using UnityEngine.EventSystems;
 using UnityEngine.Experimental.GlobalIllumination; // マウスイベントに必要
+
+/// <summary>
+/// シーンの移動を管理するスクリプト
+/// </summary>
 public class ChangeScene : MonoBehaviour
 {
     public string sceneName; //読み込むシーン名

@@ -947,6 +947,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 187704906}
     - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
+      propertyPath: nextButton
+      value: 
+      objectReference: {fileID: 959612873}
+    - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
+      propertyPath: retryButton
+      value: 
+      objectReference: {fileID: 1517364061}
+    - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
       propertyPath: spawnRangeX
       value: 4
       objectReference: {fileID: 0}
@@ -962,6 +970,10 @@ PrefabInstance:
       propertyPath: flashDuration
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
+      propertyPath: gameClearText
+      value: 
+      objectReference: {fileID: 304570661}
     - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
       propertyPath: gameStartText
       value: 
@@ -2875,6 +2887,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2720333944863604917, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
+      propertyPath: retryUI
+      value: 
+      objectReference: {fileID: 1006827413}
+    - target: {fileID: 2720333944863604917, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 1492559858}
@@ -2895,6 +2911,10 @@ PrefabInstance:
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2720333944863604917, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
+      propertyPath: gameOverUI
+      value: 
+      objectReference: {fileID: 187704906}
+    - target: {fileID: 2720333944863604917, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
       propertyPath: nextButton
       value: 
       objectReference: {fileID: 959612873}
@@ -2902,6 +2922,10 @@ PrefabInstance:
       propertyPath: retryButton
       value: 
       objectReference: {fileID: 1517364061}
+    - target: {fileID: 2720333944863604917, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
+      propertyPath: StageSelectUI
+      value: 
+      objectReference: {fileID: 1476958138}
     - target: {fileID: 2720333944863604917, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}
       propertyPath: bgmController
       value: 

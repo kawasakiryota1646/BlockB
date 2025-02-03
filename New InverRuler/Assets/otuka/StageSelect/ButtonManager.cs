@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 特定のシーンのボタンを表示、非表示にするスクリプト
+/// </summary>
 public class ButtonManager : MonoBehaviour
 {
     public AudioSource click;

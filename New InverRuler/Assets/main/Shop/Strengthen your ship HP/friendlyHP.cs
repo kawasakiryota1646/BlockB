@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+/// <summary>
+/// 味方機体のHPを購入するためのスクリプト
+/// </summary>
 public class friendlyHP : MonoBehaviour
 {
     public AudioSource buttonAudio;//ボタンの上にマウスポインタが来たら音を鳴らすAudio
@@ -17,6 +21,8 @@ public class friendlyHP : MonoBehaviour
     const int MAXIMUMHP = 3;//最大HPを定数化
     const int PRESENT = 10;//最初の必要なコインの枚数を定数化
     const int INCREASE = 1;//増加するHPの値を定数化
+    public GameObject Buy2;
+    public GameObject Soldout2;
     //スタート関数
     void Start()
     {
@@ -27,10 +33,13 @@ public class friendlyHP : MonoBehaviour
         changeHP.onClick.AddListener(ChangeHP);//ボタンを押したらHPを増やす関数に移動する
         insufficientCoinsText.gameObject.SetActive(false); // 初期状態では非表示
         insufficientCoinsObject.SetActive(false); // 初期状態では非表示
-
+        Soldout2.SetActive(false);
+        Buy2.SetActive(true);
         UpdateCostText(); // 初期値を表示
     }
-
+    /// <summary>
+    /// 味方機体のHPを増やす関数
+    /// </summary>
     //チェンジ関数
     void ChangeHP()
     {
@@ -74,6 +83,8 @@ public class friendlyHP : MonoBehaviour
             insufficientCoinsText.text = "HPは最大です"; // 上限に達したメッセージを設定
             insufficientCoinsText.gameObject.SetActive(true); // メッセージを表示
             insufficientCoinsObject.SetActive(true); // オブジェクトを表示
+            Buy2.SetActive(false);
+            Soldout2.SetActive(true);
         }
         else
         {
@@ -86,7 +97,9 @@ public class friendlyHP : MonoBehaviour
             insufficientCoinsObject.SetActive(true); // オブジェクトを表示
         }
     }
-
+    /// <summary>
+    /// HPを増やす為に必要なコインの枚数を表示する関数
+    /// </summary>
     void UpdateCostText()
     {
         int currentCost = baseCost + (purchaseCount * PRESENT); // 現在のコイン消費量を計算

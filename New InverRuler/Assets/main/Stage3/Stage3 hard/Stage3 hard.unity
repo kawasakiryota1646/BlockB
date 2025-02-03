@@ -738,6 +738,9 @@ MonoBehaviour:
   phase3Sprite: {fileID: 21300000, guid: c1932dec5a32d084395fbde443d1a5c9, type: 3}
   phase4Sprite: {fileID: 21300000, guid: b38e34b60fe7bd7449e04667b54d18ff, type: 3}
   ammoText: {fileID: 6074072198681759686}
+  gameOverUI: {fileID: 1432296480}
+  retryUI: {fileID: 2356481161105458256}
+  StageSelectUI: {fileID: 1721943037}
 --- !u!1 &337867311 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5628597861727087577, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
@@ -2964,6 +2967,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1432296480}
     - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
+      propertyPath: nextButton
+      value: 
+      objectReference: {fileID: 6893185311297266914}
+    - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
       propertyPath: StageSelectUI
       value: 
       objectReference: {fileID: 444824169}
@@ -2975,6 +2982,10 @@ PrefabInstance:
       propertyPath: flashDuration
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
+      propertyPath: gameClearText
+      value: 
+      objectReference: {fileID: 1001717928}
     - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
       propertyPath: gameStartText
       value: 

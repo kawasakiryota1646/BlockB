@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// コイン(お金)を管理するスクリプト
+/// </summary>
 public class CoinManager : MonoBehaviour
 {
     public static CoinManager instance;

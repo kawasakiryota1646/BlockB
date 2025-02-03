@@ -234,7 +234,7 @@ MonoBehaviour:
   fireInterval: 5
   POTATOSpeed: 2
   shootInterval: 1.5
-  bulletCount: 9
+  bulletCount: 7
   burgerSpeed: 5
   angleRange: 180
   spawnInterval: 0.2
@@ -920,6 +920,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1218182835}
     - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
+      propertyPath: nextButton
+      value: 
+      objectReference: {fileID: 232751551}
+    - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
+      propertyPath: retryButton
+      value: 
+      objectReference: {fileID: 484608281}
+    - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
       propertyPath: spawnRangeX
       value: 4
       objectReference: {fileID: 0}
@@ -935,6 +943,10 @@ PrefabInstance:
       propertyPath: flashDuration
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
+      propertyPath: gameClearText
+      value: 
+      objectReference: {fileID: 92105564}
     - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
       propertyPath: gameStartText
       value: 
@@ -2412,6 +2424,9 @@ MonoBehaviour:
   phase3Sprite: {fileID: 21300000, guid: 53e8921ceef10e746932a7f9bed4c7bd, type: 3}
   phase4Sprite: {fileID: 21300000, guid: 1c93d2f56b5455b4b99bb739b7a1502b, type: 3}
   ammoText: {fileID: 1008596347}
+  gameOverUI: {fileID: 1218182835}
+  retryUI: {fileID: 1488802881}
+  StageSelectUI: {fileID: 2050405565}
 --- !u!212 &1651366331 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2720333944863604915, guid: 3eded5ac6c4587c41b807a8fb1864c7d, type: 3}

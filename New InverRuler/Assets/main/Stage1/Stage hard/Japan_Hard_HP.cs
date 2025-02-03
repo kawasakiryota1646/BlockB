@@ -26,6 +26,9 @@ public class Japan_Hard_HP : MonoBehaviour
     public Sprite phase3Sprite;
     public Sprite phase4Sprite;
     public Text ammoText;
+    public GameObject gameOverUI; // ゲームオーバー時のUI
+    public GameObject retryUI; // ゲームオーバー時のUI
+    public GameObject StageSelectUI; // ゲームオーバー時のUI
     void Start()
     {
         currentHealth = maxHealth;
@@ -105,6 +108,19 @@ public class Japan_Hard_HP : MonoBehaviour
         retryButton.SetActive(true);
         nextButton.SetActive(true);
         gameClearText.SetActive(true);
+
+
+
+
+
+
+        if (retryButton == true)
+        {
+            gameOverUI.SetActive(false); // ゲームオーバーUIを非表示にする
+            retryUI.SetActive(false); // ゲームオーバーUIを非表示にする
+            StageSelectUI.SetActive(false); // ゲームオーバーUIを非表示にする
+        }
+      
 
         // ゲームクリアBGMを再生する
         if (bgmController != null)

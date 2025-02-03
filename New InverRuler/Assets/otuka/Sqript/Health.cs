@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// プレイヤーHP回復アイテムのスクリプト
+/// </summary>
 public class Health : MonoBehaviour
 {
     public AudioSource LifeAudioSource; // ダメージ効果音用

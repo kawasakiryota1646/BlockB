@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 味方機体の弾の威力を増やすスクリプト
+/// </summary>
 public class Bulletstrengthening : MonoBehaviour
 {
 
@@ -14,6 +17,8 @@ public class Bulletstrengthening : MonoBehaviour
     private int purchaseCount; // 購入回数を管理する変数
     private int baseCost = 30; // 基本のコイン消費量
     public AudioSource Lackofcoins;//買えなかった時に鳴らすSE
+    public GameObject Buy;
+    public GameObject Soldout;
     void Start()
     {
         
@@ -22,7 +27,8 @@ public class Bulletstrengthening : MonoBehaviour
         changeDamageButton.onClick.AddListener(ChangeBulletDamage);//ボタンがクリックされたらChangeBulletDamageの関数に飛ぶ
         insufficientCoinsText.gameObject.SetActive(false); // 初期状態では非表示
         insufficientCoinsObject.SetActive(false); // 初期状態では非表示
-        
+        Soldout.SetActive(false);
+        Buy.SetActive(true);
         UpdateCostText(); // 初期値を表示
     }
 
@@ -61,6 +67,8 @@ public class Bulletstrengthening : MonoBehaviour
             insufficientCoinsText.text = "弾の威力は最大です"; // 上限に達したメッセージを設定
             insufficientCoinsText.gameObject.SetActive(true); // メッセージを表示
             insufficientCoinsObject.SetActive(true); // オブジェクトを表示
+            Buy.SetActive(false);
+            Soldout.SetActive(true);
         }
         else//どれも当てはまらないなら中の処理を実行
         {

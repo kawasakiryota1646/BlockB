@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // UIを使用するために必要
-
+/// <summary>
+/// プレイヤーのHPを管理するスクリプト
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
     public GameObject player;
@@ -30,6 +32,9 @@ public class PlayerController : MonoBehaviour
     public Transform cameraTransform; // カメラのTransform
     public float spawnRangeX = 10f; // X軸方向の出現範囲
     public float spawnHeight = 4f; // Y軸方向の出現高さ
+    public GameObject retryButton; // リトライボタン
+    public GameObject nextButton; // 次へボタン
+    public GameObject gameClearText; // GAMEクリアのテキスト
     // Start is called before the first frame update
     void Start()
     {
@@ -52,11 +57,13 @@ public class PlayerController : MonoBehaviour
         axisH = Input.GetAxisRaw("Horizontal"); //左右キー入力
         axisV = Input.GetAxisRaw("Vertical"); //上下キー入力
 
+        
         //hpが０ならGameOver関数に飛ぶ
         if (hp <= 0)
         {
             StartCoroutine(GameOver());
         }
+        
     }
 
     void FixedUpdate()
@@ -162,10 +169,22 @@ public class PlayerController : MonoBehaviour
 
         Destroy(player, 0.1f); // プレイヤーを消す
 
+        
         // ゲームオーバーUIを表示
         gameOverUI.SetActive(true);
         retryUI.SetActive(true);
         StageSelectUI.SetActive(true);
+
+
+        if(gameOverUI == true)
+        {
+            // ボタンとテキストを非表示にする
+            retryButton.SetActive(false);
+            nextButton.SetActive(false);
+            gameClearText.SetActive(false);
+        }
+
+
 
         // ゲームオーバーBGMを再生する
         if (bgmController != null)

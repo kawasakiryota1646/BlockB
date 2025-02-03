@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// プレイヤーの弾の威力を表示するスクリプト
+/// </summary>
 public class DisplayBulletDamage : MonoBehaviour
 {
     public Text damageText;//自機(プレイヤー)の弾の威力を表示するテキスト

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// プレイヤーの弾を回復するアイテムを出現させるスクリプト
+/// </summary>
 public class Healitem : MonoBehaviour
 {
     public GameObject ammoPrefab;//回復アイテムのプレハブ

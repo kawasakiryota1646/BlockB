@@ -2011,11 +2011,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2183988180045808095, guid: acecde0d711771b40a71d565079fe852, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.501
+      value: -3.28
       objectReference: {fileID: 0}
     - target: {fileID: 2183988180045808095, guid: acecde0d711771b40a71d565079fe852, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.384
+      value: 0.63
       objectReference: {fileID: 0}
     - target: {fileID: 2183988180045808095, guid: acecde0d711771b40a71d565079fe852, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2129,11 +2129,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2183988180045808095, guid: acecde0d711771b40a71d565079fe852, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.206
+      value: 3.35
       objectReference: {fileID: 0}
     - target: {fileID: 2183988180045808095, guid: acecde0d711771b40a71d565079fe852, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.305
+      value: 0.68
       objectReference: {fileID: 0}
     - target: {fileID: 2183988180045808095, guid: acecde0d711771b40a71d565079fe852, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2271,6 +2271,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4838079792094807344, guid: c3851e233fe21c647be7a23b9efbc8b3, type: 3}
+      propertyPath: retryUI
+      value: 
+      objectReference: {fileID: 749624393}
+    - target: {fileID: 4838079792094807344, guid: c3851e233fe21c647be7a23b9efbc8b3, type: 3}
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 1651373837}
@@ -2282,6 +2286,14 @@ PrefabInstance:
       propertyPath: coinsToAdd
       value: 70
       objectReference: {fileID: 0}
+    - target: {fileID: 4838079792094807344, guid: c3851e233fe21c647be7a23b9efbc8b3, type: 3}
+      propertyPath: gameOverUI
+      value: 
+      objectReference: {fileID: 864261966}
+    - target: {fileID: 4838079792094807344, guid: c3851e233fe21c647be7a23b9efbc8b3, type: 3}
+      propertyPath: StageSelectUI
+      value: 
+      objectReference: {fileID: 2030342099}
     - target: {fileID: 4838079792094807344, guid: c3851e233fe21c647be7a23b9efbc8b3, type: 3}
       propertyPath: bgmController
       value: 
@@ -2606,6 +2618,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 864261966}
     - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
+      propertyPath: nextButton
+      value: 
+      objectReference: {fileID: 1829886307}
+    - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
       propertyPath: spawnRangeX
       value: 4
       objectReference: {fileID: 0}
@@ -2621,6 +2637,10 @@ PrefabInstance:
       propertyPath: flashDuration
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
+      propertyPath: gameClearText
+      value: 
+      objectReference: {fileID: 2114051126}
     - target: {fileID: 5076256397953372999, guid: 104d7d4b5b097784188edb61e1d79c36, type: 3}
       propertyPath: gameStartText
       value: 

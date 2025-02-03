@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 味方機体のHPを表示するスクリプト
+/// </summary>
 public class NumberofLives : MonoBehaviour
 {
     public Text damageText;

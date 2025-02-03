@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// プレイヤーの弾数を回復するアイテムを管理するスクリプト
+/// </summary>
 public class battery : MonoBehaviour
 {
     public int ammoAmount = 5;//弾の回復数

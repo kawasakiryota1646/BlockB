@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class Japan_normal_HP : MonoBehaviour
 {
+    public PlayerController playerController;
     public int maxHealth = 100;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
@@ -25,6 +27,9 @@ public class Japan_normal_HP : MonoBehaviour
     public Sprite phase3Sprite;
     public Sprite phase4Sprite;
     public Text ammoText;
+    public GameObject gameOverUI; // ゲームオーバー時のUI
+    public GameObject retryUI; // ゲームオーバー時のUI
+    public GameObject StageSelectUI; // ゲームオーバー時のUI
     void Start()
     {
         
@@ -102,12 +107,20 @@ public class Japan_normal_HP : MonoBehaviour
         Destroy(gameObject); // 敵を消す
 
 
+        
+        
+         // ボタンとテキストを表示する
+         retryButton.SetActive(true);
+         nextButton.SetActive(true);
+         gameClearText.SetActive(true);
+        if(retryButton == true)
+        {
+            gameOverUI.SetActive(false); // ゲームオーバーUIを非表示にする
+            retryUI.SetActive(false); // ゲームオーバーUIを非表示にする
+            StageSelectUI.SetActive(false); // ゲームオーバーUIを非表示にする
+        }
+      
 
-
-        // ボタンとテキストを表示する
-        retryButton.SetActive(true);
-        nextButton.SetActive(true);
-        gameClearText.SetActive(true);
 
         // ゲームクリアBGMを再生する
         if (bgmController != null)
